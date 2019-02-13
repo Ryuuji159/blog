@@ -1,0 +1,89 @@
+:root {
+    --primary-color: #E64E55;
+    --secondary-color: #E5924E;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+textarea {
+    max-width: 100%;
+}
+
+.navbar {
+    padding: 2rem;
+}
+
+.navbar > *{
+    font-size: 2rem;
+}
+
+.nav-link {
+    color: var(--secondary-color);
+}
+
+.post-title {
+    color: var(--primary-color);
+}
+
+.post-title > a {
+    font-weight: 600;
+}
+
+.content {
+    border-right: solid;
+    padding-right: 4rem;
+    border-color: var(--primary-color);
+}
+
+.button.button-primary, 
+button.button-primary, 
+input[type="submit"].button-primary, 
+input[type="reset"].button-primary, 
+input[type="button"].button-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.button.button-primary:hover, 
+button.button-primary:hover,
+input[type="submit"].button-primary:hover,
+input[type="reset"].button-primary:hover,
+input[type="button"].button-primary:hover, 
+.button.button-primary:focus,
+button.button-primary:focus,
+input[type="submit"].button-primary:focus,
+input[type="reset"].button-primary:focus,
+input[type="button"].button-primary:focus {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+@media (min-width: 400px) {
+    .content {
+        border-bottom: solid;
+        margin-bottom: 4rem;
+        border-color: var(--primary-color);
+    }
+}
+
+@media (min-width: 1000px) {
+    .content {
+        width: 74.0%;
+        float: left;
+        box-sizing: border-box;
+    }
+
+    .content {
+        border-bottom: none;
+    }
+
+    .side {
+        width: 26.0%;
+        float: right;
+        box-sizing: border-box;
+        padding-left: 4rem;
+    }
+}

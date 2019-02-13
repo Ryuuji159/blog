@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}blog/create{% endblock %}
+
+{% block content %}
+    <form method="post">
+        <label for="title">~/title:</label>
+        <input type="text" class="u-full-width" id="title" name="title">
+        <label for="markdown">~/content:</label>
+        <textarea class="u-full-width" id="markdown" name="markdown"></textarea>
+        <label for="resume">~/resume:</label>
+        <textarea class="u-full-width" id="resume" name="resume"></textarea>
+        <input class="button-primary" type="submit" value="Upload">
+    </form>
+{% endblock %}

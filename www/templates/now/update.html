@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %}now/update{% endblock %}
+
+{% block content %}
+    <form method="post">
+        <label for="markdown">~/content:</label>
+        <textarea class="u-full-width" id="markdown" name="markdown">{{ request.form['markdown'] or now['markdown'] }}</textarea>
+        <input class="button-primary" type="submit" value="upload">
+    </form>
+{% endblock %}

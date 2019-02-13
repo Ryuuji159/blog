@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}blog/update/"{{ post['title'] }}"{% endblock %}
+
+{% block content %}
+    <form method="post">
+        <label for="title">~/title:</label>
+        <input type="text" class="u-full-width" id="title" name="title" value={{ request.form['title'] or post['title'] }}>
+        <label for="markdown">~/content:</label>
+        <textarea class="u-full-width" id="markdown" name="markdown">{{ request.form['markdown'] or post['markdown'] }}</textarea>
+        <label for="resume">~/resume:</label>
+        <textarea class="u-full-width" id="resume" name="resume">{{ request.form['resume'] or post['resume'] }}</textarea>
+        <input class="button-primary" type="submit" value="upload">
+    </form>
+{% endblock %}
