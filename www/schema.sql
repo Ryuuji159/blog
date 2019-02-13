@@ -22,3 +22,7 @@ CREATE TABLE users (
     username TEXT NOT NULL,
     password TEXT NOT NULL
 );
+
+INSERT INTO now (markdown, html) VALUES (
+    "",""
+);

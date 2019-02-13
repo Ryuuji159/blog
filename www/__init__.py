@@ -19,7 +19,7 @@ def create_app():
 
     @app.route('/')
     def index():
-        return render_template('empty.html') 
+        return redirect(url_for('blog.index')) 
 
 
     from . import db
