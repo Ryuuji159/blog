@@ -1,6 +1,0 @@
-include www/schema.sql
-include www/dummy.sql
-graft www/templates
-graft www/static
-global-exclude *.pyc
-
