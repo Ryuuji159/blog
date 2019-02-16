@@ -17,9 +17,7 @@
             <a href="{{ url_for('recommended.index') }}" class="nav-link">/recomended</a>
             <a href="{{ url_for('now.index') }}" class="nav-link">/now</a>
             {% if g.user %}
-            <a href="{{ url_for('blog.create') }}" class="nav-link logout">/create-post</a>
-            <a href="{{ url_for('now.update') }}" class="nav-link logout">/update-now</a>
-            <a href="{{ url_for('auth.logout') }}" class="nav-link logout">/logout</a>
+            <a href="{{ url_for('admin.panel') }}" class="nav-link">/admin</a>
             {% endif %}
         </div>
     </nav>
