@@ -6,7 +6,7 @@ from werkzeug.exceptions import abort
 import markdown as md
 
 from www.db import get_db
-from www.admin import admin_required 
+from www.auth import admin_required 
 
 bp = Blueprint('blog', __name__, url_prefix='/blog')
 
