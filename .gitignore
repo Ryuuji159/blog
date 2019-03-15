@@ -116,4 +116,6 @@ dmypy.json
 
 
 # Personal things!
-setup_env.sh
+web.env
+db.env
+dump.sql

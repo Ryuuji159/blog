@@ -5,43 +5,41 @@ from flask import redirect, url_for, render_template
 
 def create_app():
     app = Flask(__name__, instance_relative_config=True)
-
     app.config.from_mapping(
-        DATABASE=os.path.join(app.instance_path, 'www.sqlite'),
+        SQLALCHEMY_DATABASE_URI=os.environ.get("DATABASE_URI"),
+        SQLALCHEMY_TRACK_MODIFICATIONS=os.environ.get("TRACK_MODIFICATIONS"),
+        USERNAME=os.environ.get("USERNAME"),
+        PASSWORD=os.environ.get("PASSWORD"),
+        SECRET_KEY=os.environ.get("SECRET_KEY")
     )
-
-    app.config.from_pyfile('config.py', silent=True)
-
-    try:
-        os.makedirs(app.instance_path)
-    except OSError:
-        pass
 
     @app.route('/')
     def index():
-        return redirect(url_for('blog.index')) 
+        return redirect(url_for('blog.index'))
 
 
-    from . import db
+    from www.models import db
     db.init_app(app)
 
-    from . import auth
+    from www import commands
+    commands.init_app(app)
+
+    from www import auth
     app.register_blueprint(auth.bp)
 
-    from . import admin 
+    from www import admin
     app.register_blueprint(admin.bp)
 
-    from . import blog
+    from www import blog
     app.register_blueprint(blog.bp)
 
-    from . import now 
+    from www import now
     app.register_blueprint(now.bp)
 
-    from . import recommended 
+    from www import recommended
     app.register_blueprint(recommended.bp)
 
-    from . import projects
+    from www import projects
     app.register_blueprint(projects.bp)
 
     return app
-

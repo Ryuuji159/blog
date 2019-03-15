@@ -1,24 +1,20 @@
-from flask import (
-    Blueprint, flash, g, redirect, render_template, request, url_for
-)
-
-from werkzeug.exceptions import abort
 import markdown as md
 
-from www.db import get_db
-from www.auth import admin_required 
+from flask import Blueprint, redirect, render_template, request, url_for
+
+from www.auth import admin_required
+from www.models import db, Now
+
 
 bp = Blueprint('now', __name__, url_prefix='/now')
 
+
 @bp.route('/')
 def index():
-    db = get_db()
-    now = db.execute(
-       'SELECT html'
-       ' FROM now'
-    ).fetchone()
+    now = Now.query.order_by(Now.created_at.desc()).first()
 
     return render_template('now/now.html', now=now)
+
 
 @bp.route('/update', methods=('GET', 'POST'))
 @admin_required
@@ -27,21 +23,14 @@ def update():
         markdown = request.form['markdown']
         html = parse_markdown(markdown)
 
-        db = get_db()
-        db.execute(
-            'UPDATE now'
-            ' SET markdown = ?, html = ?',
-            (markdown, html,)
-        )
-        db.commit()
+        now = Now(markdown, html)
+        db.session.add(now)
+        db.session.commit()
         return redirect(url_for('now.index'))
 
-    now = get_db().execute(
-        'SELECT id, markdown'
-        ' FROM now'
-    ).fetchone()
+    now = Now.query.order_by(Now.created_at.desc()).first()
     return render_template('now/update.html', now=now)
 
 def parse_markdown(markdown):
-    html = md.markdown(markdown) 
+    html = md.markdown(markdown)
     return html

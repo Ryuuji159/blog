@@ -1,0 +1,21 @@
+version: '3'
+services:
+    web:
+        build: .
+        ports:
+            - "8081:8081"
+        volumes:
+            - ./www:/app/www
+        depends_on:
+            - db
+        env_file:
+            - web.env
+        command: "gunicorn --config gunicorn.conf run:app"
+    db:
+        image: mariadb
+        volumes:
+            - dbdata:/var/lib/mysql
+        env_file:
+            - db.env
+volumes:
+    dbdata:
