@@ -41,6 +41,14 @@ def init_db_command():
     generate_admin()
     generate_base_now()
 
+@click.command('generate-admin')
+@with_appcontext
+def generate_admin_command():
+    """
+    Generate admin
+    """
+    generate_admin()
 
 def init_app(app):
     app.cli.add_command(init_db_command)
+    app.cli.add_command(generate_admin_command)

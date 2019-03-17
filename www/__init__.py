@@ -8,6 +8,7 @@ def create_app():
     app.config.from_mapping(
         SQLALCHEMY_DATABASE_URI=os.environ.get("DATABASE_URI"),
         SQLALCHEMY_TRACK_MODIFICATIONS=os.environ.get("TRACK_MODIFICATIONS"),
+        SQLALCHEMY_POOL_RECYCLE=os.environ.get("POOL_RECYCLE"),
         USERNAME=os.environ.get("USERNAME"),
         PASSWORD=os.environ.get("PASSWORD"),
         SECRET_KEY=os.environ.get("SECRET_KEY")
