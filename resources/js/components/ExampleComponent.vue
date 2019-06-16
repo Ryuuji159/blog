@@ -18,7 +18,7 @@
     export default {
         mounted() {
             console.log('Component mounted.')
-        },
-        console.log('HOLA! funciono <3')
+        }
     }
+    console.log('HOLA! funciono <3');
 </script>
