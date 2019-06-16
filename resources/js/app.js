@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-Vue.Use(VueRouter)
+Vue.use(VueRouter)
 
 import App from './views/App'
 import Hello from './views/Hello'
