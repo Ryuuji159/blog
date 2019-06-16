@@ -7,7 +7,7 @@ import App from './views/App'
 import Hello from './views/Hello'
 import Home from './views/Home'
 
-const router = VueRouter({
+const router = new VueRouter({
     mode: 'history',
     routes: [
         {
@@ -18,7 +18,7 @@ const router = VueRouter({
         {
             path: '/hello',
             name: 'hello',
-            component: Hello
+            component: Hello,
         },
     ],
 });
