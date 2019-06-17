@@ -11,8 +11,9 @@
             </li>
         </ul>
         <div class="pagination">
-            <button :disabled="! prevPage" @click.prevent="goToPrev">Previous</button>
-            <button :disabled="! nexPage" @click.prevent="goToNext">Next</button>
+            <button :disabled="!prevPage" @click.prevent="goToPrev">Previous</button>
+            {{ paginationCount }}
+            <button :disabled="!nextPage" @click.prevent="goToNext">Next</button>
         </div>
     </div>
 </template>
@@ -22,6 +23,7 @@ import axios from 'axios';
 
 const getUsers = (page, callback) => {
     const params = { page };
+
     axios
         .get('/api/users', { params })
         .then(response => {
