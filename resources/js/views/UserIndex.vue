@@ -1,7 +1,14 @@
 <template>
     <div class="users">
         <div class="loading" v-if="loading">Loading...</div>
-        <div v-if="error" class="error">{{ error }}</div>
+        <div v-if="error" class="error">
+            <p>{{ error }}</p>
+            <p>
+                <button @click.prevent="fetchData">
+                    Try again
+                </button>
+            </p>
+        </div>
         <ul v-if="users">
             <li v-for="{ name, email } in users">
                 <strong>Name:</strong>  {{ name }},
@@ -32,6 +39,9 @@ export default {
                 .then(response => {
                     this.loading = false;
                     this.users = response.data;
+                }).catch(error => {
+                    this.loading = false;
+                    this.error = error.response.data.message || error.message;
                 });
         }
     }
