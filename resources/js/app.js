@@ -7,6 +7,8 @@ import App from './views/App'
 import Hello from './views/Hello'
 import Home from './views/Home'
 import UserIndex from './views/UserIndex'
+import UserEdit from './views/UserEdit'
+import NotFound from './views/NotFound'
 
 const router = new VueRouter({
     mode: 'history',
@@ -26,6 +28,20 @@ const router = new VueRouter({
             name: 'users.index',
             component: UserIndex,
         },
+        {
+            path: '/users/:id/edit',
+            name: 'users.edit',
+            component: UserEdit,
+        },
+        {
+            path: '/404',
+            name: '404',
+            component: NotFound,
+        },
+        {
+            path: '*',
+            redirect: '/404',
+        }
     ],
 });
 

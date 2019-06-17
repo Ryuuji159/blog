@@ -14,4 +14,32 @@ class UsersController extends Controller
     {
         return UserResource::collection(User::paginate(10));
     }
+
+    public function all()
+    {
+        return UserResource::collection(User::all());
+    }
+
+    public function show(User $user) 
+    {
+        return new UserResource($user);
+    }
+
+    public function update(User $user, Request $request)
+    {
+        $data = $request->validate([
+            'name'  => 'required',
+            'email' => 'required|email',
+        ]);
+
+        $user->update($data);
+        return new UserResource($user);
+    }
+
+    public function delete(User $user)
+    {
+        $user->delete();
+
+        return response(null, 204);
+    }
 }

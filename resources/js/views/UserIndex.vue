@@ -5,9 +5,10 @@
         </div>
 
         <ul v-if="users">
-            <li v-for="{ name, email } in users">
+            <li v-for="{ id, name, email } in users">
                 <strong>Name:</strong>  {{ name }},
                 <strong>Email:</strong> {{ email}}
+                <router-link :to="{ name: 'users.edit', params: { id } }">Edit</router-link>
             </li>
         </ul>
         <div class="pagination">
@@ -20,16 +21,16 @@
 
 <script>
 import axios from 'axios';
+import api from '../api/users';
 
 const getUsers = (page, callback) => {
     const params = { page };
 
-    axios
-        .get('/api/users', { params })
+    api.paginated({ params })
         .then(response => {
             callback(null, response.data);
         }).catch(error => {
-            callback(error, err.response.data);
+            callback(error, error.response.data);
         });
 };
 
