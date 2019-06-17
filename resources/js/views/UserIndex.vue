@@ -20,7 +20,7 @@
 <script>
 import axios from 'axios';
 
-const getUsers = (page, callback) {
+const getUsers = (page, callback) => {
     const params = page{ page };
     axios
         .get('/api/users', { params })
