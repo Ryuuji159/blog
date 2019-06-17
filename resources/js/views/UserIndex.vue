@@ -99,7 +99,7 @@ export default {
                 }
             });
         },
-        setData(err, { data: users, link, meta }) {
+        setData(err, { data: users, links, meta }) {
             if(err) {
                 this.error = err.toString();
             } else {
