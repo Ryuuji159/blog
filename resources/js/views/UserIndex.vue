@@ -79,7 +79,7 @@ export default {
         getUsers(to.query.page, (err, data) => {
             this.setData(err, data);
             next();
-        }
+        });
     },
     methods: {
         goToNext() {
