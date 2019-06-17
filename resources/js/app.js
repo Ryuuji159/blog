@@ -20,6 +20,11 @@ const router = new VueRouter({
             name: 'hello',
             component: Hello,
         },
+        {
+            path: '/users',
+            name: 'users.index',
+            component: UsersIndex,
+        },
     ],
 });
 
