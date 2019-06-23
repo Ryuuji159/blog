@@ -1,7 +1,5 @@
 @extends('base')
 
 @section('content')
-    <div class="container">
-        <h1>HOLA</h1>
-    </div>
+        <h1>Home</h1>
 @endsection

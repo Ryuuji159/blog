@@ -6,6 +6,6 @@ class NowTableSeeder extends Seeder
 {
     public function run()
     {
-        factory(App\Post::class, 50)->create();
+        factory(App\Now::class, 50)->create();
     }
 }

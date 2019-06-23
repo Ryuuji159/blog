@@ -18,21 +18,24 @@
                     <a href="{{route('blog.index')}}">Blog</a>
                 </li>
                 <li class="navbar-item">
-                    <a href="{{route('now')}}">Now</a>
+                    <a href="{{route('now.index')}}">Now</a>
                 </li>
                 <li class="navbar-item">
-                    <a href="{{route('projects')}}">Projects</a>
+                    <a href="{{route('projects')}}">Proyectos</a>
                 </li>
                 <li class="navbar-item">
                     <a href="{{route('setup')}}">Setup</a>
                 </li>
-                <li class="navbar-item">
-                    <a href="#">ADMIN</a>
-                </li>
+
+                @auth
+                    <li class="navbar-item">
+                        <a href="{{route('admin')}}">ADMIN</a>
+                    </li>
+                @endauth
             </ul>
         </nav>
 
-            @yield('content')
+        @yield('content')
 
         <script src="js/app.js"></script>
     </body>

@@ -19,6 +19,38 @@ a {
   color: #212121;
 }
 
+form label {
+  display: block;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 0.9em;
+}
+
+form input {
+  display: block;
+  width: 100%;
+  height: 2em;
+  border: 1px solid #212121;
+  border-radius: 4px;
+  margin-bottom: 1em;
+  padding: 0.4em;
+}
+
+button {
+  display: inline-block;
+  box-sizing: border-box;
+  text-align: center;
+  cursor: pointer;
+  color: #212121;
+  border: 1px solid #212121;
+  border-radius: 4px;
+  background-color: #fff;
+  font-weight: bold;
+  height: 3em;
+  padding: 0 3em;
+  text-transform: uppercase;
+}
+
 .navbar {
   display: -webkit-flex;
   display: flex;
@@ -29,6 +61,7 @@ a {
   display: -webkit-flex;
   display: flex;
   list-style: none;
+  padding-left: 0;
 }
 
 .navbar-item a {
