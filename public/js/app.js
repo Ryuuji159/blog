@@ -93,7 +93,14 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-console.log('oli');
+function classToggle() {
+  var navs = document.querySelectorAll('.navbar-items');
+  navs.forEach(function (nav) {
+    return nav.classList.toggle('navbar-toggleshow');
+  });
+}
+
+document.querySelector('.navbar-link-toggle').addEventListener('click', classToggle);
 
 /***/ }),
 

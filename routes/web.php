@@ -7,9 +7,9 @@ Route::get('/now', function () {
     return view('now');
 })->name('now');
 
-Route::get('/blog', function () {
-    return view('blog');
-})->name('blog');
+Route::get('/blog', 'BlogController@index')->name('blog.index');
+Route::get('blog/archive', 'BlogController@archive')->name('blog.archive');
+Route::get('/blog/{post}', 'BlogController@show')->name('blog.show');
 
 Route::get('/projects', function () {
     return view('projects');
