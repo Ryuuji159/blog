@@ -5,13 +5,27 @@ Route::post('/login', 'LoginController@login');
 
 Route::get('/now', 'NowController@index')->name('now.index');
 
-Route::get('/blog', 'BlogController@index')->name('blog.index');
-Route::get('blog/archive', 'BlogController@archive')->name('blog.archive');
-Route::get('/blog/{post}', 'BlogController@show')->name('blog.show');
+Route::prefix('blog')->group(function() {
+    Route::get('/', 'BlogController@index')->name('blog.index');
+    Route::get('archive', 'BlogController@archive')->name('blog.archive');
+    Route::get('{post}', 'BlogController@show')->name('blog.show');
+});
 
 Route::middleware('auth')->group(function() {
-    Route::get('/logout', 'LoginController@logout')->name('logout');
-    Route::get('/admin', 'AdminController@index')->name('admin');
+    Route::get('logout', 'LoginController@logout')->name('logout');
+
+    Route::prefix('admin')->group(function() {
+        Route::get('/', 'AdminController@index')->name('admin');
+
+        Route::prefix('posts')->group(function() {
+            Route::get('/', 'AdminController@posts')->name('admin.post.index');
+            Route::get('create', 'PostController@create')->name('admin.post.create');
+            Route::post('create', 'PostController@save')->name('admin.post.save');
+            Route::get('{post}/edit', 'PostController@edit')->name('admin.post.edit');
+            Route::post('{post}/edit', 'PostController@update')->name('admin.post.update');
+            Route::post('{post}/delete', 'PostController@edit')->name('admin.post.delete');
+        });
+    });
 });
 
 Route::get('/', function () {
