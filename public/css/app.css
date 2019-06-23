@@ -4,6 +4,8 @@
 
 body {
   color: #212121;
+  line-height: 1.6em;
+  font-size: 1.25em;
   max-width: 80ch;
   padding: 2rem;
   margin: auto;
@@ -11,6 +13,10 @@ body {
 
 hr {
   border: 1px solid #f2f2f2;
+}
+
+a {
+  color: #212121;
 }
 
 .navbar {

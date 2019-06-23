@@ -93,14 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-function classToggle() {
-  var navs = document.querySelectorAll('.navbar-items');
-  navs.forEach(function (nav) {
-    return nav.classList.toggle('navbar-toggleshow');
-  });
-}
 
-document.querySelector('.navbar-link-toggle').addEventListener('click', classToggle);
 
 /***/ }),
 
