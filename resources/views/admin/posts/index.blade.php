@@ -21,8 +21,11 @@
                     <td>{{$post->title}}</td>
                     <td>{{$post->created_at->format('Y-m-d')}}</td>
                     <td class="controls">
-                        <a href="#">edit</a>
-                        <a href="#">delete</a>
+                        <a href="{{ route('admin.post.edit', ['post' => $post->id]) }}">edit</a>
+                        <form action={{ route('admin.post.delete', ['post' => $post->id]) }} method="post">
+                            @csrf
+                            <input type="submit" value="delete"/>
+                        </form>
                     </td>
                 </tr>
             @endforeach

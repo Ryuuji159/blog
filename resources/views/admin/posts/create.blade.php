@@ -15,7 +15,7 @@
             <label for="md">Contenido</label>
             <textarea id="md" name="md"></textarea>
         </div>
-        <input type="submit" value="Crear"/>
+        <input type="submit" class="button" value="Crear"/>
     </form>
 
 @endsection

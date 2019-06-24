@@ -94,12 +94,26 @@ table {
     }
 
     td.controls {
-        a {
+        a, input[type=submit]{
+            margin: 0;
+            border: 0;
+            padding: 0;
+            width: 100%;
             display:block;
             text-transform: uppercase;
-            font-weight: bold;
+            text-align: left;
+            font-size: 1rem;
+            font-weight: 600;
             text-decoration: none;
+            letter-spacing: .1em;
+
             color: $colorfg;
+        }
+
+        input[type=submit] {
+            border: 0;
+            background-color: white;
+            cursor: pointer;
         }
     }
 
@@ -122,6 +136,7 @@ form {
         text-transform: uppercase;
         font-weight: bold;
         font-size: .9em;
+        margin-bottom: .6em;
     }
 
     input[type=text], textarea{
@@ -133,15 +148,18 @@ form {
         border-radius: 4px;
         margin-bottom: 1em;
         padding: .4em;
+        font-size: 1rem;
+        font-weight: 400;
     }
 
     textarea {
+        font-family: inherit;
         box-sizing: border-box;
         height: 30em;
     }
 
 
-    input[type=submit]{
+    .button{
         display: inline-block;
         box-sizing: border-box;
         text-align: center;

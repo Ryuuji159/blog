@@ -93,12 +93,26 @@ table th {
   text-align: left;
 }
 
-table td.controls a {
+table td.controls a,
+table td.controls input[type=submit] {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  width: 100%;
   display: block;
   text-transform: uppercase;
-  font-weight: bold;
+  text-align: left;
+  font-size: 1rem;
+  font-weight: 600;
   text-decoration: none;
+  letter-spacing: 0.1em;
   color: #212121;
+}
+
+table td.controls input[type=submit] {
+  border: 0;
+  background-color: white;
+  cursor: pointer;
 }
 
 table th.controls a {
@@ -118,6 +132,7 @@ form label {
   text-transform: uppercase;
   font-weight: bold;
   font-size: 0.9em;
+  margin-bottom: 0.6em;
 }
 
 form input[type=text],
@@ -130,14 +145,17 @@ form textarea {
   border-radius: 4px;
   margin-bottom: 1em;
   padding: 0.4em;
+  font-size: 1rem;
+  font-weight: 400;
 }
 
 form textarea {
+  font-family: inherit;
   box-sizing: border-box;
   height: 30em;
 }
 
-form input[type=submit] {
+form .button {
   display: inline-block;
   box-sizing: border-box;
   text-align: center;

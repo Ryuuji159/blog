@@ -23,7 +23,7 @@ Route::middleware('auth')->group(function() {
             Route::post('create', 'PostController@save')->name('admin.post.save');
             Route::get('{post}/edit', 'PostController@edit')->name('admin.post.edit');
             Route::post('{post}/edit', 'PostController@update')->name('admin.post.update');
-            Route::post('{post}/delete', 'PostController@edit')->name('admin.post.delete');
+            Route::post('{post}/delete', 'PostController@delete')->name('admin.post.delete');
         });
     });
 });
