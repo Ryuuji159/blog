@@ -8,13 +8,13 @@
     </head>
     <body>
         <div class="sidebar">
-            <div class="items">
-                <div class="head"><h1>Admin</h1></div>
-                <div class="item"><a href="{{ route('admin.post.index') }}">Posts</a></div>
-                <div class="item"><a href="#">Now</a></div>
-                <div class="item"><a href="#">Setup</a></div>
-                <div class="item"><a href="#">Projects</a></div>
-                <div class="end"><a href="{{ route('index') }}">Volver</a></div>
+            <div class="sidebar-items">
+                <div class="sidebar-head"><span>Admin</span></div>
+                <div class="sidebar-item"><a href="{{ route('admin.post.index')  }}" class="sidebar-link">Posts</a></div>
+                <div class="sidebar-item"><a href="#" class="sidebar-link">Now</a></div>
+                <div class="sidebar-item"><a href="#" class="sidebar-link">Setup</a></div>
+                <div class="sidebar-item"><a href="#" class="sidebar-link">Projects</a></div>
+                <div class="sidebar-end"><a href="{{ route('index') }}" class="sidebar-link">Volver</a></div>
             </div>
         </div>
 

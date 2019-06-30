@@ -9,12 +9,12 @@
         @csrf
         <div>
             <label for="title">Titulo</label>
-            <input type="text" id="title" name="title" value="{{ old('title', $post->title) }}" required/>
+            <input type="text" class="form-input" id="title" name="title" value="{{ old('title', $post->title) }}" required/>
         </div>
         <div>
             <label for="md">Contenido</label>
-            <textarea id="md" name="md">{{ old('md', $post->md) }}</textarea>
+            <textarea class="form-input" id="md" name="md">{{ old('md', $post->md) }}</textarea>
         </div>
-        <input type="submit" class="button" value="Actualizar"/>
+        <input type="submit" class="form-submit" value="Actualizar"/>
     </form>
 @endsection

@@ -9,13 +9,13 @@
         @csrf
         <div>
             <label for="title">Titulo</label>
-            <input type="text" id="title" name="title" required/>
+            <input type="text" class="form-input" id="title" name="title" required/>
         </div>
         <div>
             <label for="md">Contenido</label>
-            <textarea id="md" name="md"></textarea>
+            <textarea id="md" class="form-input" name="md"></textarea>
         </div>
-        <input type="submit" class="button" value="Crear"/>
+        <input type="submit" class="form-submit" value="Crear"/>
     </form>
 
 @endsection

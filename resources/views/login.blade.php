@@ -5,14 +5,14 @@
         @csrf
         <div>
             <label for="email" >e-mail</label>
-            <input id="email" type="email" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+            <input class="form-input" id="email" type="email" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
         </div>
 
         <div>
             <label for="password" >pass</label>
-            <input id="password" type="password" name="password" required autocomplete="current-password">
+            <input class="form-input" id="password" type="password" name="password" required autocomplete="current-password">
         </div>
 
-        <button type="submit">login</button>
+        <input class="form-submit" type="submit" value="login"/>
     </form>
 @endsection
