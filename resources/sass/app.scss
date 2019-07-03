@@ -3,11 +3,12 @@
 @import "variables.scss";
 
 /* Base
--------------------------------------*/
+-------------------------------------*/ 
 html {
     overflow-y: scroll;
     background-color: white;
 }
+
 body {
     font-size: 15px;
     line-height: 1.6rem;
@@ -122,5 +123,36 @@ textarea.form-input {
     height: 2.4rem; 
     padding: 0 2rem;
     text-transform: uppercase;
+}
+
+
+/* Images 
+-------------------------------------*/
+.image-container {
+    display: flex;
+    flex-wrap: wrap;
+    img {
+        display: block;
+        margin: .5rem;
+        max-width: calc(100% - 1rem);
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .image-container {
+        flex-direction: row;
+        img {
+            max-width: calc((100% / 2)  - 1rem);
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .image-container {
+        flex-direction: row;
+        img {
+            max-width: calc((100% / 3) - 1rem);
+        }
+    }
 }
 

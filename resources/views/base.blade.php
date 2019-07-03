@@ -21,7 +21,7 @@
                     <a class="navbar-item-link" href="{{route('now.index')}}">Now</a>
                 </li>
                 <li class="navbar-item">
-                    <a class="navbar-item-link" href="{{route('projects')}}">Proyectos</a>
+                    <a class="navbar-item-link" href="{{route('project.index')}}">Proyectos</a>
                 </li>
                 <li class="navbar-item">
                     <a class="navbar-item-link" href="{{route('setup')}}">Setup</a>

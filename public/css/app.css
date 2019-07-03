@@ -504,3 +504,41 @@ textarea.form-input {
   text-transform: uppercase;
 }
 
+/* Images 
+-------------------------------------*/
+
+.image-container {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+          flex-wrap: wrap;
+}
+
+.image-container img {
+  display: block;
+  margin: 0.5rem;
+  max-width: calc(100% - 1rem);
+}
+
+@media screen and (min-width: 600px) {
+  .image-container {
+    -webkit-flex-direction: row;
+            flex-direction: row;
+  }
+
+  .image-container img {
+    max-width: calc((100% / 2) - 1rem);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .image-container {
+    -webkit-flex-direction: row;
+            flex-direction: row;
+  }
+
+  .image-container img {
+    max-width: calc((100% / 3) - 1rem);
+  }
+}
+

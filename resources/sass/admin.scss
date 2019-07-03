@@ -99,6 +99,11 @@ $sidebar-width: 13rem;
         text-align: left;
     }
 
+    td.controls, th.controls {
+        margin-left: 0;
+        margin-right: auto;
+    }
+
     td.controls {
         a, input[type=submit]{
             display: block;

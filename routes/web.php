@@ -5,6 +5,8 @@ Route::post('/login', 'LoginController@login');
 
 Route::get('/now', 'NowController@index')->name('now.index');
 
+Route::get('/projects', 'ProjectController@index')->name('project.index');
+
 Route::prefix('blog')->group(function() {
     Route::get('/', 'BlogController@index')->name('blog.index');
     Route::get('archive', 'BlogController@archive')->name('blog.archive');
@@ -25,6 +27,24 @@ Route::middleware('auth')->group(function() {
             Route::post('{post}/edit', 'PostController@update')->name('admin.post.update');
             Route::post('{post}/delete', 'PostController@delete')->name('admin.post.delete');
         });
+
+        Route::prefix('now')->group(function() {
+            Route::get('/', 'AdminController@now')->name('admin.now.index');
+            Route::get('create', 'NowController@create')->name('admin.now.create');
+            Route::post('create', 'NowController@save')->name('admin.now.save');
+            Route::get('{post}/edit', 'NowController@edit')->name('admin.now.edit');
+            Route::post('{post}/edit', 'NowController@update')->name('admin.now.update');
+            Route::post('{post}/delete', 'NowController@delete')->name('admin.now.delete');
+        });
+        
+        Route::prefix('projects')->group(function() {
+            Route::get('/', 'AdminController@projects')->name('admin.project.index');
+            Route::get('create', 'ProjectController@create')->name('admin.project.create');
+            Route::post('create', 'ProjectController@save')->name('admin.project.save');
+            Route::get('{post}/edit', 'ProjectController@edit')->name('admin.project.edit');
+            Route::post('{post}/edit', 'ProjectController@update')->name('admin.project.update');
+            Route::post('{post}/delete', 'ProjectController@delete')->name('admin.project.delete');
+        });
     });
 });
 
@@ -32,9 +52,6 @@ Route::get('/', function () {
     return view('index');
 })->name('index');
 
-Route::get('/projects', function () {
-    return view('projects');
-})->name('projects');
 
 Route::get('/setup', function () {
     return view('setup');
