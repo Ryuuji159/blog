@@ -5,17 +5,22 @@
 @endsection
 
 @section('content')
-    <form action="{{ route('admin.post.save') }}" method="post">
+    <form class="pure-form pure-form-stacked" action="{{ route('admin.post.save') }}" method="post">
         @csrf
-        <div>
-            <label for="title">Titulo</label>
-            <input type="text" class="form-input" id="title" name="title" required/>
-        </div>
-        <div>
-            <label for="md">Contenido</label>
-            <textarea id="md" class="form-input" name="md"></textarea>
-        </div>
-        <input type="submit" class="form-submit" value="Crear"/>
+        <fieldset>
+            <div class="pure-g">
+                <div class="pure-u-1">
+                    <label for="title">Titulo</label>
+                    <input type="text" class="pure-u-23-24" id="title" name="title" required/>
+                </div>
+
+                <div class="pure-u-1">
+                    <label for="md">Contenido</label>
+                    <textarea id="md" class="pure-u-23-24" name="md"></textarea>
+                </div>
+            </div>
+            <button class="pure-button" type="submit" class="form-submit">Crear</button>
+        </fieldset>
     </form>
 
 @endsection

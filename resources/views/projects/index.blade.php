@@ -6,8 +6,10 @@
 
 @section('content')
     @foreach($projects as $project)
-        <section>
-            <h1>{{ $project->title }}</h1>
+        <article>
+            <header>
+                <h1>{{ $project->title }}</h1>
+            </header>
 
             {!! $parse->text($project->md) !!}
 

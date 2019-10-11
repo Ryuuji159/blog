@@ -4,24 +4,23 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Daniel Cortés</title>
-        <link href="{{ asset('css/admin.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     </head>
     <body>
-        <div class="sidebar">
-            <div class="sidebar-items">
-                <div class="sidebar-head"><span>Admin</span></div>
-                <div class="sidebar-item"><a href="{{ route('admin.post.index')  }}" class="sidebar-link">Posts</a></div>
-                <div class="sidebar-item"><a href="{{ route('admin.now.index')  }}" class="sidebar-link">Now</a></div>
-                <div class="sidebar-item"><a href="#" class="sidebar-link">Setup</a></div>
-                <div class="sidebar-item"><a href="{{ route('admin.project.index')  }}" class="sidebar-link">Projects</a></div>
-                <div class="sidebar-end"><a href="{{ route('index') }}" class="sidebar-link">Volver</a></div>
+            <div class="pure-menu pure-menu-horizontal">
+                <span class="pure-menu-heading">Admin</span>
+                <ul class="pure-menu-list">
+                    <li class="pure-menu-item"><a class="pure-menu-link" href="{{ route('admin.post.index')  }}">Posts</a></li>
+                    <li class="pure-menu-item"><a class="pure-menu-link" href="{{ route('admin.now.index')  }}">Now</a></li>
+                    <li class="pure-menu-item"><a class="pure-menu-link" href="#">Setup</a></li>
+                    <li class="pure-menu-item"><a class="pure-menu-link" href="{{ route('admin.project.index')  }}">Projects</a></li>
+                    <li class="pure-menu-item"><a class="pure-menu-link" href="{{ route('index') }}">Volver</a></li>
+                </ul>
             </div>
-        </div>
 
-        <div class="container">
-            @yield('title')
-            <hr/>
-            @yield('content')
+            <div class="container">
+                @yield('content')
+            </div>
         </div>
 
         <script src="js/app.js"></script>

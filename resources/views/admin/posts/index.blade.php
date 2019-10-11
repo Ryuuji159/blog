@@ -1,17 +1,23 @@
 @extends('admin.base')
 
-@section('title')
-    <h1>Posts</h1>
-@endsection
-
 @section('content')
-    <table class="table">
+    <div class="pure-g">
+        <div class="pure-u-1-5">
+            <h1>Posts</h1>
+        </div>
+        <div class="pure-u-4-5">
+            <a class="pure-button u-align-right" href="{{ route('admin.post.create') }}">Create</a>
+        </div>
+    </div>
+
+    <table class="pure-table">
         <thead>
             <tr>
                 <th>Id</th>
                 <th>Titulo</th>
                 <th>Fecha</th>
-                <th class="controls"><a href="{{ route('admin.post.create') }}">create</a></th>
+                <th></th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -20,17 +26,17 @@
                     <td>{{$post->id}}</td>
                     <td>{{$post->title}}</td>
                     <td>{{$post->created_at->format('Y-m-d')}}</td>
-                    <td class="controls">
-                        <a href="{{ route('admin.post.edit', ['post' => $post->id]) }}">edit</a>
+                    <td>
+                        <a class="pure-button" href="{{ route('admin.post.edit', ['post' => $post->id]) }}">Edit</a>
+                    </td>
+                    <td>
                         <form action={{ route('admin.post.delete', ['post' => $post->id]) }} method="post">
                             @csrf
-                            <input type="submit" value="delete"/>
+                            <button type="submit" class="pure-button">Delete</button>
                         </form>
                     </td>
                 </tr>
             @endforeach
         </tbody>
     </table>
-
-
 @endsection

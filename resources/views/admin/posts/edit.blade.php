@@ -5,16 +5,19 @@
 @endsection
 
 @section('content')
-    <form action="{{ route('admin.post.update', ['post' => $post->id]) }}" method="post">
+    <form class="pure-form pure-form-stacked"  action="{{ route('admin.post.update', ['post' => $post->id]) }}" method="post">
         @csrf
-        <div>
-            <label for="title">Titulo</label>
-            <input type="text" class="form-input" id="title" name="title" value="{{ old('title', $post->title) }}" required/>
+        <fieldset>
+        <div class="pure-g">
+            <div class="pure-u-1">
+                <label for="title">Titulo</label>
+                <input type="text" class="pure-u-23-24" id="title" name="title" value="{{ old('title', $post->title) }}" required/>
+            </div>
+            <div class="pure-u-1">
+                <label for="md">Contenido</label>
+                <textarea class="pure-u-23-24" id="md" name="md">{{ old('md', $post->md) }}</textarea>
+            </div>
         </div>
-        <div>
-            <label for="md">Contenido</label>
-            <textarea class="form-input" id="md" name="md">{{ old('md', $post->md) }}</textarea>
-        </div>
-        <input type="submit" class="form-submit" value="Actualizar"/>
+        <button type="submit" class="pure-button">Actualizar</button>
     </form>
 @endsection

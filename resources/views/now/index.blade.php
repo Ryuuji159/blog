@@ -5,8 +5,11 @@
 @endphp
 
 @section('content')
-    <section>
+    <article>
+        <header>
+            <h1>Now</h1>
+        </header>
         {!! $parse->text($now->md) !!}
-    </section>
+    </article>
     <hr/>
 @endsection

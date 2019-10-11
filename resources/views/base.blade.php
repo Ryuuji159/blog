@@ -9,26 +9,24 @@
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     </head>
     <body>
-        <nav class="navbar">
-            <ul class="navbar-items">
-                <li class="navbar-item">
-                    <a class="navbar-item-head" href="{{route('index')}}">Daniel Cortes</a>
+        <nav class="pure-menu pure-menu-horizontal">
+            <a class="pure-menu-heading pure-menu-link" href="{{route('index')}}">Daniel Cortes</a>
+            <ul class="pure-menu-list">
+                <li class="pure-menu-item">
+                    <a class="pure-menu-link" href="{{route('blog.index')}}">Blog</a>
                 </li>
-                <li class="navbar-item">
-                    <a class="navbar-item-link" href="{{route('blog.index')}}">Blog</a>
+                <li class="pure-menu-item">
+                    <a class="pure-menu-link" href="{{route('now.index')}}">Now</a>
                 </li>
-                <li class="navbar-item">
-                    <a class="navbar-item-link" href="{{route('now.index')}}">Now</a>
+                <li class="pure-menu-item">
+                    <a class="pure-menu-link" href="{{route('project.index')}}">Proyectos</a>
                 </li>
-                <li class="navbar-item">
-                    <a class="navbar-item-link" href="{{route('project.index')}}">Proyectos</a>
-                </li>
-                <li class="navbar-item">
-                    <a class="navbar-item-link" href="{{route('setup')}}">Setup</a>
+                <li class="pure-menu-item">
+                    <a class="pure-menu-link" href="{{route('setup')}}">Setup</a>
                 </li>
                 @auth
-                    <li class="navbar-item">
-                        <a class="navbar-item-link" href="{{route('admin')}}">ADMIN</a>
+                    <li class="pure-menu-item">
+                        <a class="pure-menu-link admin-link" href="{{route('admin')}}">Admin</a>
                     </li>
                 @endauth
             </ul>

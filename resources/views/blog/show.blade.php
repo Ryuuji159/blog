@@ -5,10 +5,12 @@
 @endphp
 
 @section('content')
-        <section>
-            <h1>{{$post->title}}</h1>
+        <article>
+            <header>
+                <h1>{{$post->title}}</h1>
+            </header>
             {!! $parse->text($post->md) !!}
-        </section>
+        </article>
         <hr/>
-        <span>Para posts antiguos, ve al <a href="{{ route('blog.archive') }}">archivo</a></span>
+        <span>Para ver mas posts , ve al <a href="{{ route('blog.archive') }}">archivo</a></span>
 @endsection
