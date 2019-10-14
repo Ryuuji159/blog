@@ -1,13 +1,10 @@
 @extends('admin.base')
 
 @section('content')
-    <div class="pure-g">
-        <div class="pure-u-1-5">
-            <h1>Posts</h1>
-        </div>
-        <div class="pure-u-4-5">
-            <a class="pure-button u-align-right" href="{{ route('admin.post.create') }}">Create</a>
-        </div>
+
+    <div class="table-heading">
+        <h1>Posts</h1>
+        <a class="pure-button button-black-white" href="{{ route('admin.post.create') }}">Create Post</a>
     </div>
 
     <table class="pure-table">
@@ -26,13 +23,11 @@
                     <td>{{$post->id}}</td>
                     <td>{{$post->title}}</td>
                     <td>{{$post->created_at->format('Y-m-d')}}</td>
-                    <td>
-                        <a class="pure-button" href="{{ route('admin.post.edit', ['post' => $post->id]) }}">Edit</a>
-                    </td>
-                    <td>
+                    <td class="controls">
+                        <a href="{{ route('admin.post.edit', ['post' => $post->id]) }}">Edit</a>
                         <form action={{ route('admin.post.delete', ['post' => $post->id]) }} method="post">
                             @csrf
-                            <button type="submit" class="pure-button">Delete</button>
+                            <button type="submit" class="link" onclick="return confirm('Estas seguro?')">Delete</button>
                         </form>
                     </td>
                 </tr>

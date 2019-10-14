@@ -81,63 +81,46 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./resources/js/app.js":
-/*!*****************************!*\
-  !*** ./resources/js/app.js ***!
-  \*****************************/
+/***/ "./resources/js/admin.js":
+/*!*******************************!*\
+  !*** ./resources/js/admin.js ***!
+  \*******************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
 switch (window.location.pathname) {
-  case "/":
-    document.getElementById("title-link").classList.add("pure-menu-highlight");
+  case "/admin/posts":
+    document.getElementById("posts-link").classList.add("pure-menu-highlight");
     break;
 
-  case "/blog":
-  case "/blog/archive":
-    document.getElementById("blog-link").classList.add("pure-menu-highlight");
-    break;
-
-  case "/now":
+  case "/admin/now":
     document.getElementById("now-link").classList.add("pure-menu-highlight");
     break;
 
-  case "/projects":
+  case "/admin/projects":
     document.getElementById("proyectos-link").classList.add("pure-menu-highlight");
     break;
 
-  case "/setup":
+  case "/admin/setup":
     document.getElementById("setup-link").classList.add("pure-menu-highlight");
     break;
 }
 
 /***/ }),
 
-/***/ "./resources/sass/app.scss":
-/*!*********************************!*\
-  !*** ./resources/sass/app.scss ***!
-  \*********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ 0:
-/*!*************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/app.scss ***!
-  \*************************************************************/
+/***/ 1:
+/*!*************************************!*\
+  !*** multi ./resources/js/admin.js ***!
+  \*************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/data/src/www.danielcortes.xyz/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /home/data/src/www.danielcortes.xyz/resources/sass/app.scss */"./resources/sass/app.scss");
+module.exports = __webpack_require__(/*! /home/data/src/www.danielcortes.xyz/resources/js/admin.js */"./resources/js/admin.js");
 
 
 /***/ })

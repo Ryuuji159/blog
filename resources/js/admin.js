@@ -1,18 +1,14 @@
 switch(window.location.pathname){
-    case "/":
-        document.getElementById("title-link").classList.add("pure-menu-highlight");
+    case "/admin/posts":
+        document.getElementById("posts-link").classList.add("pure-menu-highlight");
         break;
-    case "/blog":
-    case "/blog/archive":
-        document.getElementById("blog-link").classList.add("pure-menu-highlight");
-        break;
-    case "/now":
+    case "/admin/now":
         document.getElementById("now-link").classList.add("pure-menu-highlight");
         break;
-    case "/projects":
+    case "/admin/projects":
         document.getElementById("proyectos-link").classList.add("pure-menu-highlight");
         break;
-    case "/setup":
+    case "/admin/setup":
         document.getElementById("setup-link").classList.add("pure-menu-highlight");
         break;
 }

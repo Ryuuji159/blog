@@ -10,19 +10,19 @@
     </head>
     <body>
         <nav class="pure-menu pure-menu-horizontal">
-            <a class="pure-menu-heading pure-menu-link" href="{{route('index')}}">Daniel Cortes</a>
+            <a class="pure-menu-heading pure-menu-link" id="title-link" href="{{route('index')}}">Daniel Cortes</a>
             <ul class="pure-menu-list">
                 <li class="pure-menu-item">
-                    <a class="pure-menu-link" href="{{route('blog.index')}}">Blog</a>
+                    <a class="pure-menu-link" id="blog-link" href="{{route('blog.index')}}">Blog</a>
                 </li>
                 <li class="pure-menu-item">
-                    <a class="pure-menu-link" href="{{route('now.index')}}">Now</a>
+                    <a class="pure-menu-link" id="now-link"  href="{{route('now.index')}}">Now</a>
                 </li>
                 <li class="pure-menu-item">
-                    <a class="pure-menu-link" href="{{route('project.index')}}">Proyectos</a>
+                    <a class="pure-menu-link" id="proyectos-link" href="{{route('project.index')}}">Proyectos</a>
                 </li>
                 <li class="pure-menu-item">
-                    <a class="pure-menu-link" href="{{route('setup')}}">Setup</a>
+                    <a class="pure-menu-link" id="setup-link" href="{{route('setup')}}">Setup</a>
                 </li>
                 @auth
                     <li class="pure-menu-item">
@@ -36,6 +36,6 @@
             @yield('content')
         </div>
 
-        <script src="js/app.js"></script>
+        <script src="{{ asset('js/app.js') }}"></script>
     </body>
 </html>

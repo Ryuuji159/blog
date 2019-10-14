@@ -10,10 +10,10 @@
             <div class="pure-menu pure-menu-horizontal">
                 <span class="pure-menu-heading">Admin</span>
                 <ul class="pure-menu-list">
-                    <li class="pure-menu-item"><a class="pure-menu-link" href="{{ route('admin.post.index')  }}">Posts</a></li>
-                    <li class="pure-menu-item"><a class="pure-menu-link" href="{{ route('admin.now.index')  }}">Now</a></li>
-                    <li class="pure-menu-item"><a class="pure-menu-link" href="#">Setup</a></li>
-                    <li class="pure-menu-item"><a class="pure-menu-link" href="{{ route('admin.project.index')  }}">Projects</a></li>
+                    <li class="pure-menu-item"><a class="pure-menu-link" id="posts-link" href="{{ route('admin.post.index')  }}">Posts</a></li>
+                    <li class="pure-menu-item"><a class="pure-menu-link" id="now-link"href="{{ route('admin.now.index')  }}">Now</a></li>
+                    <li class="pure-menu-item"><a class="pure-menu-link" id="setup-link"href="#">Setup</a></li>
+                    <li class="pure-menu-item"><a class="pure-menu-link" id="projects-link"href="{{ route('admin.project.index')  }}">Projects</a></li>
                     <li class="pure-menu-item"><a class="pure-menu-link" href="{{ route('index') }}">Volver</a></li>
                 </ul>
             </div>
@@ -23,6 +23,7 @@
             </div>
         </div>
 
-        <script src="js/app.js"></script>
+        <script src="{{ asset('js/app.js') }}"></script>
+        <script src="{{ asset('js/admin.js') }}"></script>
     </body>
 </html>

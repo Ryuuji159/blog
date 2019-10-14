@@ -8,19 +8,14 @@
     <form class="pure-form pure-form-stacked" action="{{ route('admin.post.save') }}" method="post">
         @csrf
         <fieldset>
-            <div class="pure-g">
-                <div class="pure-u-1">
-                    <label for="title">Titulo</label>
-                    <input type="text" class="pure-u-23-24" id="title" name="title" required/>
-                </div>
+            <label for="title">Titulo</label>
+            <input type="text" id="title" name="title" required/>
 
-                <div class="pure-u-1">
-                    <label for="md">Contenido</label>
-                    <textarea id="md" class="pure-u-23-24" name="md"></textarea>
-                </div>
+            <label for="md">Contenido</label>
+            <textarea id="md" name="md"></textarea>
+            <div class="control">
+                <button class="pure-button button-black-white" type="submit">Crear</button>
             </div>
-            <button class="pure-button" type="submit" class="form-submit">Crear</button>
         </fieldset>
     </form>
-
 @endsection
