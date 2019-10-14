@@ -27,15 +27,6 @@ class ProjectController extends Controller
         $project->md = $request->md;
         $project->save();
         
-        foreach($request->photos as $photo){
-            $filename = $photo->store('photos');
-
-            $projectPhoto = new ProjectPhoto();
-            $projectPhoto->project_id = $project->id;
-            $projectPhoto->filename = $filename;
-            $projectPhoto->save();
-        }
-
         return redirect()->route('admin.project.index');
     }
 
@@ -51,33 +42,12 @@ class ProjectController extends Controller
         $project->md = $request->md;
         $project->save();
 
-        foreach($project->photos as $photo) {
-            Storage::delete($photo->filename); 
-            $photo->delete();
-        }
-        
-        foreach($request->photos as $photo){
-            $filename = $photo->store('photos');
-
-            $projectPhoto = new ProjectPhoto();
-            $projectPhoto->project_id = $project->id;
-            $projectPhoto->filename = $filename;
-            $projectPhoto->save();
-        }
-
         return redirect()->route('admin.project.index');
     }
 
     public function delete($id)
     {
-        $project = Project::find($id);
-        foreach($project->photos as $photo) {
-            Storage::delete($photo->filename); 
-            $photo->delete();
-        }
-
-        $project->delete();
-
+        Project::find($id)->delete();
         return redirect()->route('admin.project.index');
     }
 }

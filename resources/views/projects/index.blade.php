@@ -13,11 +13,6 @@
 
             {!! $parse->text($project->md) !!}
 
-            <div class="image-container">
-                @foreach($project->photos as $photo)
-                    <img src="{{ Storage::url($photo->filename) }}"/>
-                @endforeach
-            </div>
         </section>
     @endforeach
     <hr/>

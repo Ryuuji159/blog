@@ -17,9 +17,6 @@
             <label for="md">Descripcion</label>
             <textarea id="md" name="md"></textarea>
 
-            <label for="photos">Fotos</label>
-            <input multiple="multiple" id="photos" name="photos[]" type="file">
-
             <div class="control">
                 <button class="pure-button button-black-white" type="submit">Crear</button>
             </div>
