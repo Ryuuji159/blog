@@ -5,22 +5,25 @@
 @endsection
 
 @section('content')
-    <form action="{{ route('admin.project.save') }}" enctype="multipart/form-data" method="post">
+    <form action="{{ route('admin.project.save') }}" enctype="multipart/form-data" class="pure-form pure-form-stacked" method="post">
         @csrf
-        <div>
-            <label for="title">Titulo</label>
-            <input type="text" class="form-input" id="title" name="title" required/>
-        </div>
-        <div>
-            <label for="md">Descripcion</label>
-            <textarea id="md" class="form-input" name="md"></textarea>
-        </div>
-        <div>
-            <label for="photos">Fotos</label>
-            <input multiple="multiple" id="photos" class="form-input" name="photos[]" type="file">
-        </div>
+        <fieldset>
+            <h1>Add Project</h1>
+            <a class="pure-button button-black-white" href="{{ route('admin.project.index') }}">Volver</a>
 
-        <input type="submit" class="form-submit" value="Crear"/>
+            <label for="title">Titulo</label>
+            <input type="text" id="title" name="title" required/>
+
+            <label for="md">Descripcion</label>
+            <textarea id="md" name="md"></textarea>
+
+            <label for="photos">Fotos</label>
+            <input multiple="multiple" id="photos" name="photos[]" type="file">
+
+            <div class="control">
+                <button class="pure-button button-black-white" type="submit">Crear</button>
+            </div>
+        </fieldset>
     </form>
 
 @endsection
