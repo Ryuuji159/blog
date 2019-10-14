@@ -14,20 +14,19 @@
                 <th>Titulo</th>
                 <th>Fecha</th>
                 <th></th>
-                <th></th>
             </tr>
         </thead>
         <tbody>
             @foreach($posts as $post)
                 <tr>
                     <td>{{$post->id}}</td>
-                    <td>{{$post->title}}</td>
+                    <td>{{ Str::limit($post->title, 30, "...") }}</td>
                     <td>{{$post->created_at->format('Y-m-d')}}</td>
                     <td class="controls">
-                        <a href="{{ route('admin.post.edit', ['post' => $post->id]) }}">Edit</a>
+                        <a href="{{ route('admin.post.edit', ['post' => $post->id]) }}" class="pure-button button-black-white">Edit</a>
                         <form action={{ route('admin.post.delete', ['post' => $post->id]) }} method="post">
                             @csrf
-                            <button type="submit" class="link" onclick="return confirm('Estas seguro?')">Delete</button>
+                            <button type="submit" class="pure-button button-black-white" onclick="return confirm('Estas seguro?')">Delete</button>
                         </form>
                     </td>
                 </tr>

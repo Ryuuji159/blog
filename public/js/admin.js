@@ -94,6 +94,10 @@
 /***/ (function(module, exports) {
 
 switch (window.location.pathname) {
+  case "/admin":
+    document.getElementById("title-link").classList.add("pure-menu-highlight");
+    break;
+
   case "/admin/posts":
     document.getElementById("posts-link").classList.add("pure-menu-highlight");
     break;

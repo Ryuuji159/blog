@@ -5,12 +5,18 @@
 @endsection
 
 @section('content')
-    <form action="{{ route('admin.now.update', ['now' => $now->id]) }}" method="post">
+    <form class="pure-form pure-form-stacked" action="{{ route('admin.now.update', ['now' => $now->id]) }}" method="post">
         @csrf
-        <div>
+        <fieldset>
+            <h1>Editar Now</h1>
+            <a href="{{ route('admin.now.index') }}" class="pure-button button-black-white">Volver</a>
+            
             <label for="md">Contenido</label>
-            <textarea class="form-input" id="md" name="md">{{ old('md', $now->md) }}</textarea>
-        </div>
-        <input type="submit" class="form-submit" value="Actualizar"/>
+            <textarea id="md" name="md">{{ old('md', $now->md) }}</textarea>
+
+            <div class="control">
+                <button type="submit" class="pure-button button-black-white">Actualizar</button>
+            </div>
+        </fieldset>
     </form>
 @endsection

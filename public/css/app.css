@@ -1483,9 +1483,17 @@ striping:
 .pure-table-horizontal tbody > tr:last-child > td {
     border-bottom-width: 0;
 }
+/******************************************************************************
+    => Color definitions
+*******************************************************************************/
+
+/******************************************************************************
+    => General
+*******************************************************************************/
+
 body {
   color: #241f1e;
-  background-color: #fffbfa;
+  background-color: #fdfcfc;
   overflow-y: scroll;
 }
 
@@ -1515,8 +1523,12 @@ p {
   line-height: 1.5rem;
 }
 
+/******************************************************************************
+    => Forms 
+*******************************************************************************/
+
 .pure-form textarea {
-  height: 30ch;
+  height: 20ch;
 }
 
 .pure-form input[type=text],
@@ -1527,6 +1539,22 @@ p {
 .pure-form label {
   margin-top: 1em;
 }
+
+.pure-form .control {
+  padding-top: 1em;
+  width: 100%;
+  text-align: right;
+}
+
+.pure-form {
+  border: 1px #241f1e solid;
+  background-color: #f3eeed;
+  padding: 1em;
+}
+
+/******************************************************************************
+    => Menu
+*******************************************************************************/
 
 .pure-menu-horizontal {
   display: flex;
@@ -1545,7 +1573,7 @@ p {
 }
 
 .pure-menu-link {
-  color: #212121;
+  color: #241f1e;
 }
 
 .pure-menu-link:hover,
@@ -1560,6 +1588,10 @@ p {
   padding: 0.5em 0;
 }
 
+/******************************************************************************
+    => Buttons & Links
+*******************************************************************************/
+
 .admin-link {
   color: #ee1155;
 }
@@ -1571,24 +1603,47 @@ p {
 }
 
 .button-black-white {
-  background-color: #ffffff;
-  color: #212121;
-  border: #212121 solid 1px;
+  background-color: white;
+  color: #241f1e;
+  border: #241f1e solid 1px;
+  border-radius: 0;
+  min-width: 20ch;
 }
 
+.button-black-white:focus,
 .button-black-white:hover {
-  background-color: #eeeeee;
-  color: #212121;
-  border: #212121 solid 1px;
+  background-color: white;
+  color: #241f1e;
+  border: #241f1e solid 1px;
   background-image: none;
+  box-shadow: inset 1px 1px 4px -2px #241f1e;
 }
+
+.button-black-white:active {
+  background-color: white;
+  color: #241f1e;
+  border: #241f1e solid 1px;
+  background-image: none;
+  box-shadow: inset 1px 1px 2px #241f1e;
+}
+
+/******************************************************************************
+    => Tables
+*******************************************************************************/
 
 .table-heading {
   margin-bottom: 1em;
 }
 
-.pure-table {
+.pure-table,
+.pure-table thead,
+.pure-table tbody {
   width: 100%;
+}
+
+.pure-table thead {
+  background-color: white;
+  border: 1px black solid;
 }
 
 .pure-table,
@@ -1602,17 +1657,25 @@ p {
   max-width: 30ch;
 }
 
+.pure-table tr {
+  border-bottom: 1px black solid;
+}
+
 .pure-table .controls {
-  display: inline-flex;
+  width: 16ch;
 }
 
-.pure-table .controls a:first-child {
-  padding-right: 1em;
+.pure-table .controls > * {
+  display: inline-block;
 }
 
-.pure-form .control {
-  padding-top: 1em;
-  width: 100%;
-  text-align: right;
+.pure-table .controls .pure-button.button-black-white {
+  min-width: auto;
+  width: 7ch;
+  padding: 0.5em 0;
+}
+
+.pure-table .controls :first-child {
+  margin-right: 1ch;
 }
 
