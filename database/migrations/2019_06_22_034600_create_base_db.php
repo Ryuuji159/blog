@@ -27,6 +27,13 @@ class CreateBaseDb extends Migration
             $table->longText('md');
             $table->timestamps();
         });
+        
+        Schema::create('setup', function(Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('title');
+            $table->longText('md');
+            $table->timestamps();
+        });
     }
 
     public function down()

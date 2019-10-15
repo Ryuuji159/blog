@@ -93,6 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
+// Highlight links if in his page
 switch (window.location.pathname) {
   case "/":
     document.getElementById("title-link").classList.add("pure-menu-highlight");
@@ -114,6 +115,15 @@ switch (window.location.pathname) {
   case "/setup":
     document.getElementById("setup-link").classList.add("pure-menu-highlight");
     break;
+} // Makes all images clickeable
+
+
+var images = document.getElementsByTagName("img");
+
+for (i = 0; i < images.length; i++) {
+  images[i].onclick = function (e) {
+    window.open(e.target.src, '_blank');
+  };
 }
 
 /***/ }),

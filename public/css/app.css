@@ -1498,13 +1498,14 @@ body {
 }
 
 .container {
-  max-width: 70ch;
+  max-width: 80ch;
   padding-bottom: 2ch;
   margin: auto;
 }
 
 img {
   max-width: 100%;
+  cursor: pointer;
 }
 
 a {
@@ -1523,17 +1524,35 @@ p {
   line-height: 1.5rem;
 }
 
+article {
+  box-shadow: 3px 3px 10px 0px #aaa;
+  padding: 2ch 10ch;
+  margin-bottom: 2em;
+}
+
 /******************************************************************************
     => Forms 
 *******************************************************************************/
 
 .pure-form textarea {
-  height: 20ch;
+  height: 25ch;
+  min-width: calc(80ch - 2em);
+  max-width: calc(80ch - 2em);
 }
 
 .pure-form input[type=text],
 .pure-form textarea {
-  width: 100%;
+  width: calc(80ch - 2em);
+}
+
+.pure-form input[type=text],
+.pure-form input[type=email],
+.pure-form input[type=password],
+.pure-form textarea {
+  border-radius: 0;
+  border: 1px #241f1e solid;
+  box-shadow: none;
+  background-color: white;
 }
 
 .pure-form label {
@@ -1541,14 +1560,13 @@ p {
 }
 
 .pure-form .control {
-  padding-top: 1em;
   width: 100%;
+  padding-top: 1em;
   text-align: right;
 }
 
 .pure-form {
-  border: 1px #241f1e solid;
-  background-color: #f3eeed;
+  box-shadow: 0px 0px 20px -15px #241f1e;
   padding: 1em;
 }
 

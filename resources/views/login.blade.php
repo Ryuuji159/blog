@@ -6,12 +6,12 @@
         <fieldset>
             <div class="pure-control-group">
                 <label for="email" >e-mail</label>
-                <input id="email" type="email" name="email" value="{{ old('email') }}" placeholder="e-mail" required autocomplete="email" autofocus>
+                <input id="email" type="email" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
             </div>
 
             <div class="pure-control-group">
                 <label for="password" >pass</label>
-                <input id="password" type="password" name="password" placeholder="pass" required autocomplete="current-password">
+                <input id="password" type="password" name="password" required autocomplete="current-password">
             </div>
 
             <div class="pure-controls">
