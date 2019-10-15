@@ -8,7 +8,7 @@
     @foreach($setups as $setup) 
         <article>
             <header>
-                <h1>{{$setup->title}}</h1>
+                <h1 class="post-title">{{$setup->title}}</h1>
             </header>
             {!! $parse->text($setup->md) !!}
         </article>

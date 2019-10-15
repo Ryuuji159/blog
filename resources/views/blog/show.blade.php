@@ -7,7 +7,7 @@
 @section('content')
         <article>
             <header>
-                <h1>{{$post->title}}</h1>
+                <h1 class="post-title">{{$post->title}}</h1>
             </header>
             {!! $parse->text($post->md) !!}
         </article>

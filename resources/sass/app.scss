@@ -46,11 +46,30 @@ p {
     line-height: 1.5rem;
 }
 
+
 article {
     box-shadow: 3px 3px 10px 0px #aaa;
-    padding: 2ch 10ch;
+    padding: 2ch 2ch;
     margin-bottom: 2em;
     background-color: lighten($background-color, 10%);
+    overflow-x: auto;
+}
+
+@media (min-width: 768px) {
+    article {
+        padding: 2ch 10ch;
+        overflow-x: none;
+    }
+}
+
+.post-title {
+    text-decoration: none;
+    letter-spacing: .1ch;
+    color: $foreground-color;
+}
+
+time {
+    color: lighten($foreground-color, 40%);
 }
 
 /******************************************************************************
@@ -191,8 +210,7 @@ article {
 }
 
 .special-link:hover{
-    color: $admin-color;
-    border-bottom: 1px $admin-color solid;
+    color: lighten($admin-color,10%);
     background-color: transparent;
 }
 
@@ -217,6 +235,7 @@ article {
 /******************************************************************************
     => Tables
 *******************************************************************************/
+
 .pure-table {
     margin-top: 1em;
 }
@@ -244,12 +263,19 @@ article {
     max-width: 30ch;
 }
 
+
 .pure-table tr {
     border-bottom: 1px black solid;
 }
 
 .pure-table .controls {
-    width: 22ch;
+    width: 10ch;
+}
+
+@media (min-width: 768px){
+    .pure-table .controls {
+        width: 22ch;
+    }
 }
 
 .pure-table .controls > *{

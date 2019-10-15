@@ -8,7 +8,7 @@
     @foreach($projects as $project)
         <article>
             <header>
-                <h1>{{ $project->title }}</h1>
+                <h1 class="post-title">{{ $project->title }}</h1>
             </header>
 
             {!! $parse->text($project->md) !!}

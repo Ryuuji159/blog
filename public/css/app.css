@@ -1528,9 +1528,27 @@ p {
 
 article {
   box-shadow: 3px 3px 10px 0px #aaa;
-  padding: 2ch 10ch;
+  padding: 2ch 2ch;
   margin-bottom: 2em;
   background-color: white;
+  overflow-x: auto;
+}
+
+@media (min-width: 768px) {
+  article {
+    padding: 2ch 10ch;
+    overflow-x: none;
+  }
+}
+
+.post-title {
+  text-decoration: none;
+  letter-spacing: 0.1ch;
+  color: #241f1e;
+}
+
+time {
+  color: #937f7b;
 }
 
 /******************************************************************************
@@ -1673,8 +1691,7 @@ article {
 }
 
 .special-link:hover {
-  color: #ee1155;
-  border-bottom: 1px #ee1155 solid;
+  color: #f14177;
   background-color: transparent;
 }
 
@@ -1732,7 +1749,13 @@ article {
 }
 
 .pure-table .controls {
-  width: 22ch;
+  width: 10ch;
+}
+
+@media (min-width: 768px) {
+  .pure-table .controls {
+    width: 22ch;
+  }
 }
 
 .pure-table .controls > * {
