@@ -7,18 +7,28 @@
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     </head>
     <body>
-        <nav class="pure-menu pure-menu-horizontal">
-            <a class="pure-menu-heading pure-menu-link" id="title-link" href="{{route('admin')}}">Admin</a>
-            <ul class="pure-menu-list">
-                <li class="pure-menu-item"><a class="pure-menu-link" id="posts-link" href="{{ route('admin.post.index')  }}">Posts</a></li>
-                <li class="pure-menu-item"><a class="pure-menu-link" id="now-link" href="{{ route('admin.now.index')  }}">Now</a></li>
-                <li class="pure-menu-item"><a class="pure-menu-link" id="projects-link"href="{{ route('admin.project.index')  }}">Projects</a></li>
-                <li class="pure-menu-item"><a class="pure-menu-link" id="setup-link" href="{{ route('admin.setup.index') }}">Setups</a></li>
-                <li class="pure-menu-item"><a class="pure-menu-link special-link" href="{{ route('index') }}">Volver</a></li>
+        <nav class="menu">
+            <ul class="menu-list">
+                <a class="menu-heading" id="title-link" href="{{route('admin')}}">Admin</a>
+                <li class="menu-item">
+                    <a class="menu-link" id="posts-link" href="{{ route('admin.post.index')  }}">Posts</a>
+                </li>
+                <li class="menu-item">
+                    <a class="menu-link" id="now-link" href="{{ route('admin.now.index')  }}">Now</a>
+                </li>
+                <li class="menu-item">
+                    <a class="menu-link" id="projects-link"href="{{ route('admin.project.index')  }}">Projects</a>
+                </li>
+                <li class="menu-item">
+                    <a class="menu-link" id="setup-link" href="{{ route('admin.setup.index') }}">Setups</a>
+                </li>
+                <li class="menu-item">
+                    <a class="menu-link special-link" href="{{ route('index') }}">Volver</a>
+                </li>
             </ul>
         </nav>
 
-        <div class="container">
+        <div class="container wide">
             @yield('content')
         </div>
 

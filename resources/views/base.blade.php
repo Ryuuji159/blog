@@ -9,28 +9,31 @@
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     </head>
     <body>
-        <nav class="pure-menu pure-menu-horizontal">
-            <a class="pure-menu-heading pure-menu-link" id="title-link" href="{{route('index')}}">Daniel Cortes</a>
-            <ul class="pure-menu-list">
-                <li class="pure-menu-item">
-                    <a class="pure-menu-link" id="blog-link" href="{{route('blog.index')}}">Blog</a>
+        <nav class="menu">
+            <ul class="menu-list">
+                <a class="menu-heading" href="{{route('index')}}">Daniel Cortes</a>
+
+                <li class="menu-item">
+                    <a class="menu-link" id="blog-link" href="{{route('blog.index')}}">Blog</a>
                 </li>
-                <li class="pure-menu-item">
-                    <a class="pure-menu-link" id="now-link"  href="{{route('now.index')}}">Now</a>
+                <li class="menu-item">
+                    <a class="menu-link" id="now-link"  href="{{route('now.index')}}">Now</a>
                 </li>
-                <li class="pure-menu-item">
-                    <a class="pure-menu-link" id="proyectos-link" href="{{route('project.index')}}">Projects</a>
+                <li class="menu-item">
+                    <a class="menu-link" id="projects-link" href="{{route('project.index')}}">Projects</a>
                 </li>
-                <li class="pure-menu-item">
-                    <a class="pure-menu-link" id="setup-link" href="{{route('setups.index')}}">Setups</a>
+                <li class="menu-item">
+                    <a class="menu-link" id="setup-link" href="{{route('setups.index')}}">Setups</a>
                 </li>
                 @auth
-                    <li class="pure-menu-item">
-                        <a class="pure-menu-link special-link" href="{{route('admin')}}">Admin</a>
+                    <li class="menu-item">
+                        <a class="menu-link special-link" href="{{route('admin')}}">Admin</a>
                     </li>
                 @endauth
             </ul>
         </nav>
+
+        <div class="separator"></div>
 
         <div class="container">
             @yield('content')
