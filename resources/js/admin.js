@@ -7,26 +7,24 @@ if(
     window.location.pathname === "/admin/posts" || 
     window.location.pathname === "/admin/posts/create" ||
     window.location.pathname.match(posts_edit_regexp)
-)
-    document.getElementById("posts-link").classList.add("pure-menu-highlight");
-
-else if(
+){
+    document.getElementById("posts-link").classList.add("menu-highlight");
+} else if(
     window.location.pathname === "/admin/now" ||
     window.location.pathname === "/admin/now/create" ||
     window.location.pathname.match(now_edit_regexp)
-)
-    document.getElementById("now-link").classList.add("pure-menu-highlight");
-
-else if(
+){
+    document.getElementById("now-link").classList.add("menu-highlight");
+} else if(
     window.location.pathname === "/admin/projects" ||
     window.location.pathname === "/admin/projects/create" ||
     window.location.pathname.match(projects_edit_regexp)
-)
-    document.getElementById("projects-link").classList.add("pure-menu-highlight");
-
-else if(
+){
+    document.getElementById("projects-link").classList.add("menu-highlight");
+} else if(
     window.location.pathname === "/admin/setups" ||
     window.location.pathname === "/admin/setups/create" ||
     window.location.pathname.match(setups_edit_regexp)
-)
-    document.getElementById("setup-link").classList.add("pure-menu-highlight");
+){
+    document.getElementById("setup-link").classList.add("menu-highlight");
+}

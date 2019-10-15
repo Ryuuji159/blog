@@ -12,5 +12,4 @@
         </header>
         {!! $parse->text($now->md) !!}
     </article>
-    <hr/>
 @endsection
