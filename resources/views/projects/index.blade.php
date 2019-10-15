@@ -14,5 +14,4 @@
             {!! $parse->text($project->md) !!}
         </article>
     @endforeach
-    <hr/>
 @endsection
