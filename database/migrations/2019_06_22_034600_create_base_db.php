@@ -28,7 +28,7 @@ class CreateBaseDb extends Migration
             $table->timestamps();
         });
         
-        Schema::create('setup', function(Blueprint $table) {
+        Schema::create('setups', function(Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('title');
             $table->longText('md');
@@ -41,5 +41,6 @@ class CreateBaseDb extends Migration
         Schema::dropIfExists('projects');
         Schema::dropIfExists('now');
         Schema::dropIfExists('posts');
+        Schema::dropIfExists('setups');
     }
 }

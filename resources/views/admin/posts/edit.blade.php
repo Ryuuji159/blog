@@ -9,16 +9,16 @@
         @csrf
         <fieldset>
             <h1>Editar Post</h1>
-            <a href="{{ route('admin.post.index') }}" class="pure-button button-black-white">Volver</a>
+            <a href="{{ route('admin.post.index') }}" class="pure-button button-black-white">Back</a>
 
-            <label for="title">Titulo</label>
+            <label for="title">Title</label>
             <input type="text" id="title" name="title" value="{{ old('title', $post->title) }}" required/>
 
-            <label for="md">Contenido</label>
+            <label for="md">Content</label>
             <textarea id="md" name="md">{{ old('md', $post->md) }}</textarea>
 
             <div class="control">
-                <button type="submit" class="pure-button button-black-white">Actualizar</button>
+                <button type="submit" class="pure-button button-black-white">Update</button>
             </div>
         </fieldset>
     </form>

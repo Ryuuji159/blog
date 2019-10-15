@@ -9,13 +9,13 @@
         @csrf
         <fieldset>
             <h1>Create Now</h1>
-            <a class="pure-button button-black-white" href="{{ route('admin.now.index') }}">Volver</a>
+            <a class="pure-button button-black-white" href="{{ route('admin.now.index') }}">Back</a>
 
-            <label for="md">Contenido</label>
+            <label for="md">Content</label>
             <textarea id="md" name="md"></textarea>
 
             <div class="control">
-                <button type="submit" class="pure-button button-black-white">Crear</button>
+                <button type="submit" class="pure-button button-black-white">Create</button>
             </div>
         </fieldset>
     </form>

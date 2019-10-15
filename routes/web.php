@@ -7,6 +7,8 @@ Route::get('/now', 'NowController@index')->name('now.index');
 
 Route::get('/projects', 'ProjectController@index')->name('project.index');
 
+Route::get('/setups', 'SetupController@index')->name('setups.index');
+
 Route::prefix('blog')->group(function() {
     Route::get('/', 'BlogController@index')->name('blog.index');
     Route::get('archive', 'BlogController@archive')->name('blog.archive');
@@ -44,6 +46,15 @@ Route::middleware('auth')->group(function() {
             Route::get('{post}/edit', 'ProjectController@edit')->name('admin.project.edit');
             Route::post('{post}/edit', 'ProjectController@update')->name('admin.project.update');
             Route::post('{post}/delete', 'ProjectController@delete')->name('admin.project.delete');
+        });
+
+        Route::prefix('setups')->group(function() {
+            Route::get('/', 'AdminController@setups')->name('admin.setup.index');
+            Route::get('create', 'SetupController@create')->name('admin.setup.create');
+            Route::post('create', 'SetupController@save')->name('admin.setup.save');
+            Route::get('{setup}/edit', 'SetupController@edit')->name('admin.setup.edit');
+            Route::post('{setup}/edit', 'SetupController@update')->name('admin.setup.update');
+            Route::post('{setup}/delete', 'SetupController@delete')->name('admin.setup.delete');
         });
     });
 });

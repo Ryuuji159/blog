@@ -129,11 +129,11 @@ article {
     => Buttons & Links
 *******************************************************************************/
 
-.admin-link {
+.special-link {
     color: $admin-color;
 }
 
-.admin-link:hover{
+.special-link:hover{
     color: $admin-color;
     border-bottom: 1px $admin-color solid;
     background-color: transparent;

@@ -9,16 +9,16 @@
         @csrf
         <fieldset>
             <h1>Add Project</h1>
-            <a class="pure-button button-black-white" href="{{ route('admin.project.index') }}">Volver</a>
+            <a class="pure-button button-black-white" href="{{ route('admin.project.index') }}">Back</a>
 
-            <label for="title">Titulo</label>
+            <label for="title">Title</label>
             <input type="text" id="title" name="title" required/>
 
-            <label for="md">Descripcion</label>
+            <label for="md">Description</label>
             <textarea id="md" name="md"></textarea>
 
             <div class="control">
-                <button class="pure-button button-black-white" type="submit">Crear</button>
+                <button class="pure-button button-black-white" type="submit">Create</button>
             </div>
         </fieldset>
     </form>

@@ -1610,11 +1610,11 @@ article {
     => Buttons & Links
 *******************************************************************************/
 
-.admin-link {
+.special-link {
   color: #ee1155;
 }
 
-.admin-link:hover {
+.special-link:hover {
   color: #ee1155;
   border-bottom: 1px #ee1155 solid;
   background-color: transparent;

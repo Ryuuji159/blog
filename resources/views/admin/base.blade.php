@@ -11,16 +11,15 @@
             <a class="pure-menu-heading pure-menu-link" id="title-link" href="{{route('admin')}}">Admin</a>
             <ul class="pure-menu-list">
                 <li class="pure-menu-item"><a class="pure-menu-link" id="posts-link" href="{{ route('admin.post.index')  }}">Posts</a></li>
-                <li class="pure-menu-item"><a class="pure-menu-link" id="now-link"href="{{ route('admin.now.index')  }}">Now</a></li>
-                <li class="pure-menu-item"><a class="pure-menu-link" id="setup-link"href="#">Setup</a></li>
+                <li class="pure-menu-item"><a class="pure-menu-link" id="now-link" href="{{ route('admin.now.index')  }}">Now</a></li>
                 <li class="pure-menu-item"><a class="pure-menu-link" id="projects-link"href="{{ route('admin.project.index')  }}">Projects</a></li>
-                <li class="pure-menu-item"><a class="pure-menu-link" href="{{ route('index') }}">Volver</a></li>
+                <li class="pure-menu-item"><a class="pure-menu-link" id="setup-link" href="{{ route('admin.setup.index') }}">Setups</a></li>
+                <li class="pure-menu-item"><a class="pure-menu-link special-link" href="{{ route('index') }}">Volver</a></li>
             </ul>
         </nav>
 
         <div class="container">
             @yield('content')
-        </div>
         </div>
 
         <script src="{{ asset('js/app.js') }}"></script>

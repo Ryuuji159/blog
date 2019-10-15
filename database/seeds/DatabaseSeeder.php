@@ -8,5 +8,7 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(PostTableSeeder::class);
         $this->call(NowTableSeeder::class);
+        $this->call(SetupTableSeeder::class);
+        $this->call(ProjectTableSeeder::class);
     }
 }

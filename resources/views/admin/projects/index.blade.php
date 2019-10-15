@@ -14,8 +14,8 @@
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Titulo</th>
-                <th>Fecha</th>
+                <th>Title</th>
+                <th>Date</th>
                 <th></th>
             </tr>
         </thead>

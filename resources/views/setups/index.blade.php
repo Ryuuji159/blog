@@ -5,14 +5,12 @@
 @endphp
 
 @section('content')
-    @foreach($projects as $project)
+    @foreach($setups as $setup) 
         <article>
             <header>
-                <h1>{{ $project->title }}</h1>
+                <h1>{{$setup->title}}</h1>
             </header>
-
-            {!! $parse->text($project->md) !!}
+            {!! $parse->text($setup->md) !!}
         </article>
     @endforeach
-    <hr/>
 @endsection

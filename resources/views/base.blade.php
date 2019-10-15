@@ -19,14 +19,14 @@
                     <a class="pure-menu-link" id="now-link"  href="{{route('now.index')}}">Now</a>
                 </li>
                 <li class="pure-menu-item">
-                    <a class="pure-menu-link" id="proyectos-link" href="{{route('project.index')}}">Proyectos</a>
+                    <a class="pure-menu-link" id="proyectos-link" href="{{route('project.index')}}">Projects</a>
                 </li>
                 <li class="pure-menu-item">
-                    <a class="pure-menu-link" id="setup-link" href="{{route('setup')}}">Setup</a>
+                    <a class="pure-menu-link" id="setup-link" href="{{route('setups.index')}}">Setups</a>
                 </li>
                 @auth
                     <li class="pure-menu-item">
-                        <a class="pure-menu-link admin-link" href="{{route('admin')}}">Admin</a>
+                        <a class="pure-menu-link special-link" href="{{route('admin')}}">Admin</a>
                     </li>
                 @endauth
             </ul>
