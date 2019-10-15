@@ -8,6 +8,7 @@
         <article>
             <header>
                 <h1 class="post-title">{{$post->title}}</h1>
+                <time datetime="{{ $post->created_at->toDateString() }}"> {{ $post->created_at->toFormattedDateString() }} </time>
             </header>
             {!! $parse->text($post->md) !!}
         </article>
