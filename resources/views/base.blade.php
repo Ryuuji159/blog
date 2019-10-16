@@ -6,7 +6,7 @@
         @section('title')
             <title>Daniel Cortés</title>
         @show
-        <link href="{{ asset('css/app.css') }}" rel="stylesheet" media="css" onload="this.media='all'">
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     </head>
     <body>
         <nav class="menu">
