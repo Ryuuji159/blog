@@ -1478,7 +1478,6 @@ __webpack_require__(/*! prismjs/components/prism-php-extras.js */ "./node_module
 
 __webpack_require__(/*! prismjs/components/prism-markup-templating.js */ "./node_modules/prismjs/components/prism-markup-templating.js");
 
-console.log(prismjs);
 prismjs.highlightAll();
 
 /***/ }),

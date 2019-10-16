@@ -5,7 +5,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Daniel Cortés</title>
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-        <link href="{{ asset('css/prism.css') }}" rel="stylesheet">
     </head>
     <body>
         <nav class="menu">
@@ -33,8 +32,6 @@
             @yield('content')
         </div>
 
-        <script src="{{ asset('js/app.js') }}"></script>
         <script src="{{ asset('js/admin.js') }}"></script>
-        <script src="{{ asset('js/prism.js') }}"></script>
     </body>
 </html>

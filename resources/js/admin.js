@@ -1,3 +1,5 @@
+require("./app.js")
+
 function is_admin_post_route() {
     const posts_edit_regexp = new RegExp("/admin/posts/\\d+/edit");
     return (
@@ -34,7 +36,7 @@ function is_admin_setups_route() {
     );
 }
 
-function admin_highlight() {
+function admin_highlight_route() {
     if(is_admin_post_route()){
         document.getElementById("posts-link").classList.add("menu-highlight");
     }
@@ -49,7 +51,7 @@ function admin_highlight() {
     }
 }
 
-function preview() {
+function preview_md() {
     const previewButton = document.getElementById("preview");
     const mainButton = document.getElementById("main");
 
@@ -68,9 +70,6 @@ function preview() {
     });
 }
 
-function main() {
-    admin_highlight();
-    preview();
-}
 
-window.onload = main;
+admin_highlight_route();
+preview_md();
