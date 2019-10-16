@@ -20,6 +20,10 @@ class SetupController extends Controller
 
     public function save(Request $request)
     {
+        if($request->action === "preview") {
+           return $this->preview($request);
+        }
+
         $setup = new Setup();
         $setup->title = $request->title;
         $setup->md = $request->md;
@@ -35,12 +39,24 @@ class SetupController extends Controller
 
     public function update(Request $request, $id)
     {
+        if($request->action === "preview") {
+            return $this->preview($request);
+        }
+
         $setup = Setup::find($id);
         $setup->title = $request->title;
         $setup->md = $request->md;
         $setup->save();
 
         return redirect()->route('admin.setup.index');
+    }
+
+    public function preview(Request $request)
+    {
+        return view('admin.preview', [
+            'md' => $request->md, 
+            'title' => $request->title
+        ]);
     }
 
     public function delete($id)

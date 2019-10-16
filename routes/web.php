@@ -62,9 +62,3 @@ Route::middleware('auth')->group(function() {
 Route::get('/', function () {
     return view('index');
 })->name('index');
-
-
-Route::get('/setup', function () {
-    return view('setup');
-})->name('setup');
-

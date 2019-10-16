@@ -18,7 +18,8 @@
             <textarea class="form-input" id="md" name="md">{{ old('md', $project->md) }}</textarea>
 
             <div class="control">
-                <button type="submit" class="pure-button button-black-white">Back</button>
+                <button class="pure-button button-black-white" name="action" id="preview" type="submit" value="preview">Preview</button>
+                <button class="pure-button button-black-white" name="action" id="main" type="submit" value="update">Update</button>
             </div>
         </fieldset>
     </form>

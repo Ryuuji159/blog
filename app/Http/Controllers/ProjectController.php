@@ -22,6 +22,10 @@ class ProjectController extends Controller
 
     public function save(Request $request)
     {
+        if($request->action === "preview") {
+           return $this->preview($request);
+        }
+
         $project = new Project();
         $project->title = $request->title;
         $project->md = $request->md;
@@ -37,12 +41,24 @@ class ProjectController extends Controller
 
     public function update(Request $request, $id)
     {
+        if($request->action === "preview") {
+            return $this->preview($request);
+        }
+
         $project = Project::find($id);
         $project->title = $request->title;
         $project->md = $request->md;
         $project->save();
 
         return redirect()->route('admin.project.index');
+    }
+
+    public function preview(Request $request)
+    {
+        return view('admin.preview', [
+            'md' => $request->md, 
+            'title' => $request->title
+        ]);
     }
 
     public function delete($id)

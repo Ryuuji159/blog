@@ -20,6 +20,10 @@ class NowController extends Controller
 
     public function save(Request $request)
     {
+        if($request->action === "preview") {
+           return $this->preview($request);
+        }
+
         $now = new Now();
         $now->md = $request->md;
         $now->save();
@@ -34,12 +38,24 @@ class NowController extends Controller
 
     public function update(Request $request, $id)
     {
+        if($request->action === "preview") {
+            return $this->preview($request);
+        }
+
         $now = Now::find($id);
 
         $now->md = $request->md;
         $now->update();
 
         return redirect()->route('admin.now.index');
+    }
+
+    public function preview(Request $request)
+    {
+        return view('admin.preview', [
+            'md' => $request->md, 
+            'title' => "Now"
+        ]);
     }
 
     public function delete($id)

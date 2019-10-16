@@ -15,7 +15,8 @@
             <textarea id="md" name="md"></textarea>
 
             <div class="control">
-                <button type="submit" class="pure-button button-black-white">Create</button>
+                <button class="pure-button button-black-white" name="action" id="preview" type="submit" value="preview">Preview</button>
+                <button class="pure-button button-black-white" name="action" id="main" type="submit" value="create">Create</button>
             </div>
         </fieldset>
     </form>

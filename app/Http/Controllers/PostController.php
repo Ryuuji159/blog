@@ -14,6 +14,10 @@ class PostController extends Controller
 
     public function save(Request $request)
     {
+        if($request->action === "preview") {
+           return $this->preview($request);
+        }
+
         $post = new Post();
         $post->title = $request->title;
         $post->md = $request->md;
@@ -29,6 +33,10 @@ class PostController extends Controller
 
     public function update(Request $request, $id)
     {
+        if($request->action === "preview") {
+            return $this->preview($request);
+        }
+
         $post = Post::find($id);
 
         $post->title = $request->title;
@@ -36,6 +44,14 @@ class PostController extends Controller
         $post->update();
 
         return redirect()->route('admin.post.index');
+    }
+
+    public function preview(Request $request)
+    {
+        return view('admin.preview', [
+            'md' => $request->md, 
+            'title' => $request->title
+        ]);
     }
 
     public function delete($id)
