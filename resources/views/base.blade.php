@@ -7,6 +7,7 @@
             <title>Daniel Cortés</title>
         @show
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/prism.css') }}" rel="stylesheet">
     </head>
     <body>
         <nav class="menu">
@@ -40,5 +41,6 @@
         </div>
 
         <script src="{{ asset('js/app.js') }}"></script>
+        <script src="{{ asset('js/prism.js') }}"></script>
     </body>
 </html>
