@@ -1,0 +1,14 @@
+@import "~prism-themes/themes/prism-atom-dark.css";
+
+pre[class*="language-"] {
+    border-radius: 5px;
+    border: none;
+}
+
+code[class*="language-"], pre[class*="language-"] {
+    font-family: monospace;
+    font-size: 1.1em;
+    line-height: 1.2em;
+}
+
+
