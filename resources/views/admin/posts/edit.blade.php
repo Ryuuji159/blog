@@ -19,7 +19,7 @@
                 <textarea id="md" name="md">{{ old('md', $post->md) }}</textarea>
 
                 <label for="published">
-                    <input type="checkbox" id="published" name="published" value="{{ old('published', $post->is_published) }}"/>
+                    <input type="checkbox" id="published" name="published"  {{ old('published', $post->is_published) ? 'checked' : '' }}/>
                     Published
                 </label>
 
