@@ -10,6 +10,7 @@
                 <tr>
                     <th>Id</th>
                     <th>Title</th>
+                    <th>Published</th>
                     <th>Date</th>
                     <th></th>
                 </tr>
@@ -19,6 +20,7 @@
                     <tr>
                         <td>{{$setup->id}}</td>
                         <td>{{ Str::limit($setup->title, 30, "...") }}</td>
+                        <td>{{$setup->is_published ? "Yes" : "No"}}</td>
                         <td>{{$setup->created_at->format('Y-m-d')}}</td>
                         <td class="controls">
                             <a href="{{ route('admin.setup.edit', ['setup' => $setup->id]) }}" class="pure-button button-black-white">Edit</a>

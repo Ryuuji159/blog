@@ -15,6 +15,11 @@
                 <label for="md">Content</label>
                 <textarea id="md" name="md">{{ old('md', $now->md) }}</textarea>
 
+                <label for="published">
+                    <input type="checkbox" id="published" name="published"  {{ old('published', $now->is_published) ? 'checked' : '' }}/>
+                    Published
+                </label>
+
                 <div class="control">
                     <button class="pure-button button-black-white" name="action" id="preview" type="submit" value="preview">Preview</button>
                     <button class="pure-button button-black-white" name="action" id="main" type="submit" value="update">Update</button>

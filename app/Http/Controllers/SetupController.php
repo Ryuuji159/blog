@@ -9,7 +9,9 @@ class SetupController extends Controller
 {
     public function index()
     {
-        $setups = Setup::orderBy('created_at', 'desc')->get();
+        $setups = Setup::where('is_published', true)
+            ->orderBy('created_at', 'desc')
+            ->get();
         return view('setups.index', ['setups' => $setups] );
     }
 
@@ -27,6 +29,7 @@ class SetupController extends Controller
         $setup = new Setup();
         $setup->title = $request->title;
         $setup->md = $request->md;
+        $setup->is_published = $request->has('published');
         $setup->save();
         
         return redirect()->route('admin.setup.index');
@@ -46,6 +49,7 @@ class SetupController extends Controller
         $setup = Setup::find($id);
         $setup->title = $request->title;
         $setup->md = $request->md;
+        $setup->is_published = $request->has('published');
         $setup->save();
 
         return redirect()->route('admin.setup.index');

@@ -14,6 +14,7 @@
                 <tr>
                     <th>Id</th>
                     <th>Title</th>
+                    <th>Published</th>
                     <th>Date</th>
                     <th></th>
                 </tr>
@@ -23,6 +24,7 @@
                     <tr>
                         <td>{{$project->id}}</td>
                         <td>{{ Str::limit($project->title, 30, "...") }}</td>
+                        <td>{{$project->is_published ? "Yes" : "No"}}</td>
                         <td>{{$project->created_at->format('Y-m-d')}}</td>
                         <td class="controls">
                             <a href="{{ route('admin.project.edit', ['project' => $project->id]) }}" class="pure-button button-black-white">Edit</a>

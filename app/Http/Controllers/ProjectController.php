@@ -11,7 +11,9 @@ class ProjectController extends Controller
 {
     public function index()
     {
-        $projects = Project::orderBy('created_at', 'desc')->get();
+        $projects = Project::where('is_published')
+            ->orderBy('created_at', 'desc')
+            ->get();
         return view('projects.index', ['projects' => $projects] );
     }
 
@@ -29,6 +31,7 @@ class ProjectController extends Controller
         $project = new Project();
         $project->title = $request->title;
         $project->md = $request->md;
+        $project->is_published = $request->has('published');
         $project->save();
         
         return redirect()->route('admin.project.index');
@@ -48,6 +51,7 @@ class ProjectController extends Controller
         $project = Project::find($id);
         $project->title = $request->title;
         $project->md = $request->md;
+        $project->is_published = $request->has('published');
         $project->save();
 
         return redirect()->route('admin.project.index');

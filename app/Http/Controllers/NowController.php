@@ -9,7 +9,9 @@ class NowController extends Controller
 {
     public function index()
     {
-        $now = Now::orderBy('created_at', 'desc')->first();
+        $now = Now::where('is_published')
+            ->orderBy('created_at', 'desc')
+            ->first();
         return view('now.index', ['now' => $now] );
     }
 
@@ -26,6 +28,7 @@ class NowController extends Controller
 
         $now = new Now();
         $now->md = $request->md;
+        $now->is_published = $request->has('published');
         $now->save();
 
         return redirect()->route('admin.now.index');
@@ -43,8 +46,8 @@ class NowController extends Controller
         }
 
         $now = Now::find($id);
-
         $now->md = $request->md;
+        $now->is_published = $request->has('published');
         $now->update();
 
         return redirect()->route('admin.now.index');
