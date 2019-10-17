@@ -1,4 +1,4 @@
-@import "~prism-themes/themes/prism-atom-dark.css";
+@import "~base16-prism/themes/base16-material-darker.css";
 
 pre[class*="language-"] {
     border-radius: 5px;
@@ -9,6 +9,7 @@ code[class*="language-"], pre[class*="language-"] {
     font-family: monospace;
     font-size: 1.1em;
     line-height: 1.2em;
+    text-shadow: none;
 }
 
 
