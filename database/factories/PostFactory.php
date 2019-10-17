@@ -7,6 +7,7 @@ use Faker\Generator as Faker;
 $factory->define(App\Post::class, function (Faker $faker) {
     return [
         'title' => $faker->words(5, true),
-        'md' => $faker->paragraphs(10, true)
+        'md' => $faker->paragraphs(10, true),
+        'is_published' => $faker->boolean
     ];
 });

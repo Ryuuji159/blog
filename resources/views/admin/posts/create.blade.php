@@ -18,6 +18,11 @@
                 <label for="md">Content</label>
                 <textarea id="md" name="md"></textarea>
 
+                <label for="published">
+                    <input type="checkbox" id="published" name="published"/>
+                    Published
+                </label>
+
                 <div class="control">
                     <button class="pure-button button-black-white" name="action" id="preview" type="submit" value="preview">Preview</button>
                     <button class="pure-button button-black-white" name="action" id="main" type="submit" value="create">Create</button>

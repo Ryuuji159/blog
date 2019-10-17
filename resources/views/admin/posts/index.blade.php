@@ -10,6 +10,7 @@
                 <tr>
                     <th>Id</th>
                     <th>Title</th>
+                    <th>Published</th>
                     <th>Date</th>
                     <th></th>
                 </tr>
@@ -19,6 +20,7 @@
                     <tr>
                         <td>{{$post->id}}</td>
                         <td>{{ Str::limit($post->title, 30, "...") }}</td>
+                        <td>{{$post->is_published ? "Yes" : "No"}}</td>
                         <td>{{$post->created_at->format('Y-m-d')}}</td>
                         <td class="controls">
                             <a href="{{ route('admin.post.edit', ['post' => $post->id]) }}" class="pure-button button-black-white">Edit</a>

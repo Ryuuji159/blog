@@ -21,6 +21,7 @@ class PostController extends Controller
         $post = new Post();
         $post->title = $request->title;
         $post->md = $request->md;
+        $post->is_published = $request->has('published');
         $post->save();
 
         return redirect()->route('admin.post.index');
@@ -41,6 +42,7 @@ class PostController extends Controller
 
         $post->title = $request->title;
         $post->md = $request->md;
+        $post->is_published = $request->has('published');
         $post->update();
 
         return redirect()->route('admin.post.index');

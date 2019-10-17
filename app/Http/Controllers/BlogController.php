@@ -9,8 +9,11 @@ class BlogController extends Controller
 {
     public function index()
     {
+        $posts = Post::where('is_published', true)
+            ->orderBy('created_at', 'desc')
+            ->take(3)
+            ->get();
 
-        $posts = Post::orderBy('created_at', 'desc')->take(3)->get();
         return view('blog.index', ['posts' => $posts] );
     }
 
