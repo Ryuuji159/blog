@@ -1,5 +1,13 @@
 @extends('base')
 
+@section('meta-description')
+    <meta name="description" content="Mi pequeño blog en el que pienso postear principalmente snipets de codigo, o si me emociono, alguna cosa buena">
+@endsection
+
+@section('title')
+    <title>Blog - Daniel Cortes</title>
+@endsection
+
 @php
     $parse = new Parsedown();
 @endphp

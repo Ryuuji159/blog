@@ -4,6 +4,10 @@
     $parse = new Parsedown();
 @endphp
 
+@section('meta-description')
+    <meta name="description" content="Mi pagina Now, inspirada por nownownow.com">
+@endsection
+
 @section('content')
     <article>
         <header>

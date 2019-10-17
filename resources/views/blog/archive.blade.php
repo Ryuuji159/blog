@@ -1,5 +1,9 @@
 @extends('base')
 
+@section('meta-description')
+    <meta name="description" content="Archivo del blog">
+@endsection
+
 @section('content')
     <article>
         <h1>Archivo</h1>

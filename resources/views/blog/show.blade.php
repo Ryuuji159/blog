@@ -4,6 +4,14 @@
     $parse = new Parsedown();
 @endphp
 
+@section('meta-description')
+    <meta name="description" content="Aun no pongo descripciones QuQ">
+@endsection
+
+@section('title')
+    <title>{{$post->title}} - Daniel Cortes</title>
+@endsection
+
 @section('content')
         <article>
             <header>

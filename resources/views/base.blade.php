@@ -3,6 +3,10 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="autor" content="Daniel Cortés">
+        @section('meta-description')
+            <meta name="description" content="Hey, se un poco de programacion y queria crear una pagina :3">
+        @show
         @section('title')
             <title>Daniel Cortés</title>
         @show

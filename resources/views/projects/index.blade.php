@@ -4,6 +4,10 @@
     $parse = new Parsedown();
 @endphp
 
+@section('meta-description')
+    <meta name="description" content="Todos mis projectos personales que quiero compartir">
+@endsection
+
 @section('content')
     @foreach($projects as $project)
         <article>
