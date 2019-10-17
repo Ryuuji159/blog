@@ -9,9 +9,10 @@ class NowController extends Controller
 {
     public function index()
     {
-        $now = Now::where('is_published')
+        $now = Now::where('is_published', true)
             ->orderBy('created_at', 'desc')
             ->first();
+
         return view('now.index', ['now' => $now] );
     }
 
