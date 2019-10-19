@@ -1,17 +1,8 @@
 @import "~purecss/build/pure.css";
 @import "./colors.scss";
+@import "./fonts.scss";
 @import "./prism-theme.scss";
 
-/******************************************************************************
-    => Font
-*******************************************************************************/
-@font-face {
-  font-family: 'Raleway';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Raleway'),
-    url('/fonts/Raleway-Regular.ttf') format('truetype'),
-}
 
 /******************************************************************************
     => General
@@ -20,7 +11,7 @@ body {
     color: $foreground-color;
     background-color: $background-color;
     overflow-y: scroll;
-    font-family: 'Raleway';
+    font-family: 'Raleway', sans-serif;
 }
 
 .container {
