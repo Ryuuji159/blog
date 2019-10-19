@@ -12,8 +12,8 @@ const mix = require('laravel-mix');
  */
 
 mix.disableNotifications();
-mix.js('resources/js/app.js', 'public/js')
-    .js('resources/js/admin.js', 'public/js')
-    .sass('resources/sass/app.scss', 'public/css')
-    .sass('resources/sass/prism-theme.scss', 'public/css/prism.css')
-    .copyDirectory('resources/fonts', 'public/fonts');
+mix.js('resources/js/app.js', 'public/js').version();
+mix.js('resources/js/admin.js', 'public/js').version();
+mix.sass('resources/sass/app.scss', 'public/css').version();
+mix.sass('resources/sass/prism-theme.scss', 'public/css/prism.css').version();
+mix.copyDirectory('resources/fonts', 'public/fonts');

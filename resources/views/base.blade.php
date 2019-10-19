@@ -10,7 +10,7 @@
         @section('title')
             <title>Daniel Cortés</title>
         @show
-        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+        <link href="{{ mix('css/app.css') }}" rel="stylesheet">
     </head>
     <body>
         <nav class="menu">
@@ -43,6 +43,6 @@
             @yield('content')
         </div>
 
-        <script async src="{{ asset('js/app.js') }}"></script>
+        <script async src="{{ mix('js/app.js') }}"></script>
     </body>
 </html>

@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Daniel Cortés</title>
-        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+        <link href="{{ mix('css/app.css') }}" rel="stylesheet">
     </head>
     <body>
         <nav class="menu">
@@ -32,6 +32,6 @@
             @yield('content')
         </div>
 
-        <script async src="{{ asset('js/admin.js') }}"></script>
+        <script async src="{{ mix('js/admin.js') }}"></script>
     </body>
 </html>
