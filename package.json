@@ -19,11 +19,8 @@
     },
     "dependencies": {
         "base16-prism": "^0.2.0",
-        "normalize.css": "^8.0.1",
-        "npm": "^6.11.2",
-        "prism-themes": "^1.2.0",
+        "npm": "^6.12.0",
         "prismjs": "^1.17.1",
-        "purecss": "^1.0.1",
-        "skeleton-scss": "^2.0.4"
+        "purecss": "^1.0.1"
     }
 }
