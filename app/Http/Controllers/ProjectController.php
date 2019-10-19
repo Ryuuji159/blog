@@ -11,7 +11,7 @@ class ProjectController extends Controller
 {
     public function index()
     {
-        $projects = Project::where('is_published')
+        $projects = Project::where('is_published', true)
             ->orderBy('created_at', 'desc')
             ->get();
         return view('projects.index', ['projects' => $projects] );
