@@ -21,6 +21,10 @@ function is_setups_route() {
     return window.location.pathname == "/setups";
 }
 
+function is_about_route() {
+    return window.location.pathname == "/about";
+}
+
 function highlight_route() {
     if(is_blog_route()){
         document.getElementById("blog-link").classList.add("menu-highlight");
@@ -30,7 +34,10 @@ function highlight_route() {
         document.getElementById("projects-link").classList.add("menu-highlight");
     }else if(is_projects_route()){
         document.getElementById("setup-link").classList.add("menu-highlight");
+    }else if(is_about_route()){
+        document.getElementById("about-link").classList.add("menu-highlight");
     }
+
 }
 
 function make_images_clickeable() {

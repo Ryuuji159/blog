@@ -29,6 +29,9 @@
                 <li class="menu-item">
                     <a class="menu-link" id="setup-link" href="{{route('setups.index')}}">Setups</a>
                 </li>
+                <li class="menu-item">
+                    <a class="menu-link" id="about-link" href="{{route('about')}}">About</a>
+                </li>
                 @auth
                     <li class="menu-item">
                         <a class="menu-link special-link" href="{{route('admin')}}">Admin</a>

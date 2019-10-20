@@ -4,10 +4,12 @@ Route::get('/login', 'LoginController@showLoginForm')->name('login');
 Route::post('/login', 'LoginController@login');
 
 Route::get('/now', 'NowController@index')->name('now.index');
-
 Route::get('/projects', 'ProjectController@index')->name('project.index');
-
 Route::get('/setups', 'SetupController@index')->name('setups.index');
+
+Route::get('/about', function () {
+    return view('about');
+})->name('about');
 
 Route::prefix('blog')->group(function() {
     Route::get('/', 'BlogController@index')->name('blog.index');
