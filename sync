@@ -1,0 +1,3 @@
+#!/usr/bin/bash
+
+rsync -av www/ sky:www/

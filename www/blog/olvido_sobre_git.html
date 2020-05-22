@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>Daniel Cortés</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width-device-width, initial-scale=1">
+    <meta name="author" content="Daniel Cortés">
+    <link rel="stylesheet" href="/assets/style.css" type="text/css">
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Comandos de git que olvido constantemente</h1>
+<p><time datetime="2019-10-23">Oct 23, 2019</time></p>
+<p>Aquí ire dejando multiples comandos de git que he estado buscando muchas veces y siempre vuelvo a olvidar</p>
+<h3>1 - Sacar archivo o carpeta de la zona de stage</h3>
+<pre class="codehilite"><code class="language-bash">git reset HEAD -- &lt;archivo/carpeta&gt;</code></pre>
+
+
+<h3>2 - Deshacer ultimo commit</h3>
+<pre class="codehilite"><code class="language-bash">git reset --soft HEAD~1</code></pre>
+
+
+<h3>3 - Cambiar el nombre de una annotated tag</h3>
+<pre class="codehilite"><code class="language-bash">git tag &lt;new&gt; &lt;old&gt; -f -a</code></pre>
+
+
+<h3>4 - Deshabilitar fast forward por default</h3>
+<pre class="codehilite"><code class="language-bash">git config --global merge.ff false</code></pre>
+
+
+<h3>5 -  Siempre firmar commits</h3>
+<pre class="codehilite"><code class="language-bash">git config --global commit.gpgsign true</code></pre>
+
+
+<h3>6 -  Siempre mostrar diff en commit</h3>
+<pre class="codehilite"><code class="language-bash">git config --global commit.verbose true</code></pre>
+
+
+<h3>7 -  Push tags</h3>
+<pre class="codehilite"><code class="language-bash">git push --tags</code></pre>
+
+
+<p>Esta lista ira creciendo a medida que valla necesitando nuevos comandos :3</p>
+    </div>
+    <script>
+      function makeImagesClickeable() {
+        document.querySelectorAll("img").forEach(img => {
+          img.addEventListener("click", e => window.open(e.target.src))
+        });
+      }
+
+      window.addEventListener('DOMContentLoaded', (event) => {
+        makeImagesClickeable();
+      });
+    </script>
+  </body>
+</html>

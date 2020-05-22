@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>Daniel Cortés</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width-device-width, initial-scale=1">
+    <meta name="author" content="Daniel Cortés">
+    <link rel="stylesheet" href="/assets/style.css" type="text/css">
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Cosas que olvido sobre SQL</h1>
+<p><time datetime="2019-10-23"> Oct 23, 2019 </time></p>
+<p>Si bien considero saber usar SQL al nivel suficiente con el cual hacer una 
+aplicación simple, al menos nunca me he visto en la necesidad de ir mas allá de
+hacer un left join, siempre olvido su sintaxis, por eso aquí mantendré una lista 
+de comandos que uso constantemente.</p>
+<p>Todos los datos son basados en MySQL, que es la base de datos que mas utilizo.</p>
+<h2>1 - Crear tabla</h2>
+<pre class="codehilite"><code class="language-sql">create table usuario
+(
+ id          int           primary key auto_increment,
+ nombre      varchar(255)  not null,
+ password    binary(32)    not null,
+ salt        binary(16)    not null,
+ trabajador  int           not null,
+ foreign key (trabajador)  references trabajador (id),
+ inserted_at timestamp,
+ modified_at timestamp,
+ );</code></pre>
+
+
+<h2>2 - Como usar on delete y on update</h2>
+<p>Cuando se crean foreign keys se tiene la opción de agregar on delete y on update 
+constraints, siempre olvido exactamente que significa cada modo de estos 
+constraints así que para ilustrarlos usare el siguiente modelo:</p>
+<pre class="codehilite"><code class="language-sql">create table trabajador
+(
+ id     int           primary,
+ nombre varchar(255)  not null
+);
+
+create table usuario
+(
+ id            int           primary key,
+ nombre        varchar(255)  not null,
+ trabajador_id int           not null,
+ foreign key (trabajador_id) references trabajador on (id)
+);</code></pre>
+
+
+<h3><code>ON UPDATE</code></h3>
+<ul>
+<li><code>RESTRICT</code> (default): Si es que se intenta actualizar el id de la tabla 
+trabajador la operación sera rechazada mientras exista al menos un usuario 
+que referencie a ese trabajador.</li>
+<li><code>NO ACTION</code>: Lo mismo que <code>RESTRICT</code>.</li>
+<li><code>CASCADE</code>: Si es que se intenta actualizar el id del trabajador, el id 
+también sera actualizado en todos los usuarios que referencien al 
+trabajador.</li>
+<li><code>SET NULL</code>: Al cambiar el id del trabajador, las referencias a este id en
+la tabla usuario se harán nulas.</li>
+</ul>
+<h3><code>ON DELETE</code></h3>
+<ul>
+<li><code>RESTRICT</code> (default): Si es que se intenta eliminar el trabajador la 
+operación sera rechazada mientras exista al menos un usuario que tenga una 
+referencia a ese trabajador.</li>
+<li><code>NO ACTION</code>: Lo mismo que <code>RESTRICT</code>.</li>
+<li><code>CASCADE</code>: Al eliminar un trabajador también se eliminaran todos los 
+usuarios que tengan su id asociado.</li>
+<li><code>SET NULL</code>: Cuando se elimine un trabajador, todas sus referencias en la 
+tabla  usuarios sera llenadas con nulls.</li>
+</ul>
+<h2>3 - Creación de foreign keys fuera del create table</h2>
+<pre class="codehilite"><code class="language-sql">alter table usuario add constraint fk_usuario_trabajador 
+foreign key (trabajador_id) references trabajador (id);</code></pre>
+    </div>
+    <script>
+      function makeImagesClickeable() {
+        document.querySelectorAll("img").forEach(img => {
+          img.addEventListener("click", e => window.open(e.target.src))
+        });
+      }
+
+      window.addEventListener('DOMContentLoaded', (event) => {
+        makeImagesClickeable();
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>Daniel Cortés</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width-device-width, initial-scale=1">
+    <meta name="author" content="Daniel Cortés">
+    <link rel="stylesheet" href="/assets/style.css" type="text/css">
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Una mejor forma para contar utilizando HashMaps en Java</h1>
+<p><time datetime="2019-10-17"> Oct 17, 2019 </time></p>
+<p>Este es un problema muy común y se presenta regularmente en multiples 
+situaciones, tienes una lista de cosas que se repiten y tienes que contar sus 
+ocurrencias, o tal vez necesitas contar los largos de una lista de palabras, 
+etc (ahora no se me ocurren mas).</p>
+<p>Previo a Java 8, la única forma (que a mi se me ocurra al menos) de hacer esto 
+era así: </p>
+<pre class="codehilite"><code class="language-java">String[] things = {
+    &quot;ball&quot;, &quot;celery&quot;, &quot;hand&quot;, &quot;celery&quot;, 
+    &quot;mind&quot;, &quot;ball&quot;, &quot;fresh&quot;, &quot;hand&quot;, &quot;ball&quot;, 
+    &quot;fresh&quot;, &quot;fresh&quot;
+};
+
+Map&lt;String, Integer&gt; oldWay = new HashMap&lt;&gt;();
+
+for (String thing : things) {
+    if (oldWay.containsKey(thing)) {
+        oldWay.put(thing, oldWay.get(thing) + 1);
+    } else {
+        oldWay.put(thing, 1);
+    }
+}
+
+
+System.out.println(&quot;ball   =&gt; &quot; + oldWay.get(&quot;ball&quot;));
+System.out.println(&quot;celery =&gt; &quot; + oldWay.get(&quot;celery&quot;));
+System.out.println(&quot;hand   =&gt; &quot; + oldWay.get(&quot;hand&quot;));
+System.out.println(&quot;fresh  =&gt; &quot; + oldWay.get(&quot;fresh&quot;));
+System.out.println(&quot;mind   =&gt; &quot; + oldWay.get(&quot;mind&quot;));</code></pre>
+
+
+<p>Lo cual resulta en:</p>
+<pre class="codehilite"><code class="language-md">ball   =&gt; 3
+celery =&gt; 2
+hand   =&gt; 2
+fresh  =&gt; 3
+mind   =&gt; 1</code></pre>
+
+
+<p>Este es el código que utilizaba siempre cuando estaba aprendiendo Java, pero 
+es realmente confuso cuando estas empezando, al menos yo tuve muchos problemas 
+con nulls porque no entendía realmente que estaba haciendo. </p>
+<p>Primero tenemos que comprobar si el elemento existe, si existe debemos 
+obtenerlo para sumarlo y agregarlo al <code>HashMap</code>, y cuando no existe, se coloca 
+la key con el valor por default, en este caso 1.</p>
+<p>Pero este código puede ser mas corto y claro desde la llegada de Java 8 y 
+actualmente estamos en Java 13 así que no hay escusa, ahora tenemos Lambdas y 
+<code>HashMap</code> recibió nuevas funciones, entre ellas las que se usaran aquí, 
+<code>putIfAbsent()</code> y <code>computeIfPresent()</code>: </p>
+<pre class="codehilite"><code class="language-java">for (String thing : things) {
+    eightWay.putIfAbsent(thing, 0);
+    eightWay.computeIfPresent(thing, (key, value) -&gt;  value + 1);
+}</code></pre>
+
+
+<p><code>pufIfAbsent()</code> agrega una key solamente si no existe previamente y 
+<code>computeIfPresent()</code> calcula el nuevo valor que contendrá la key con el 
+lambda que se entrega en el segundo argumento, como los 2 serán ejecutados si 
+es que el elemento no existe en el <code>HashMap</code>, se empieza a contar desde 0.</p>
+<p>Pero tenemos una función que es mas concisa y al menos a mi me agrada mas para 
+solucionar este problema, esta se llama <code>merge()</code>:</p>
+<pre class="codehilite"><code class="language-java">for (String thing : things) {
+    betterWay.merge(thing, 1, (oldValue, newValue) -&gt; oldValue + newValue);
+}</code></pre>
+
+
+<p><code>merge()</code> toma por argumentos, la key que se agregara, el valor que se quiere 
+agregar y un lambda que ejecutar si es ya existía la key, en el se podrá 
+calcular el nuevo valor que en este caso suma el valor antiguo con el valor 
+que se quiere agregar.</p>
+<p>Incluso esta forma puede quedar aun mas corta si se utiliza una referencia de 
+método, en ingles: method reference, que suena bastante mejor a mi gusto:</p>
+<pre class="codehilite"><code class="language-java">for (String thing : things) {
+    evenBetterWay.merge(thing, 1, Integer::sum);
+}</code></pre>
+
+
+<p>Y esa seria una mejor forma de contar con <code>HashMaps</code>, no es que sea 
+necesariamente mas rápido, de hecho ni siquiera he testeado su velocidad, pero 
+el código queda mucho mas corto y claro, ademas, siempre se me olvida como se 
+hace, así que ahora quedara escrito aquí para que mi futuro yo lo pueda 
+recordar.</p>
+    </div>
+    <script>
+      function makeImagesClickeable() {
+        document.querySelectorAll("img").forEach(img => {
+          img.addEventListener("click", e => window.open(e.target.src))
+        });
+      }
+
+      window.addEventListener('DOMContentLoaded', (event) => {
+        makeImagesClickeable();
+      });
+    </script>
+  </body>
+</html>

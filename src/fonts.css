@@ -1,0 +1,52 @@
+/******************************************************************************
+    => Fonts
+*******************************************************************************/
+
+/******************************************************************************
+    => Source Code Pro
+*******************************************************************************/
+@font-face {
+  font-family: 'Source Code Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Source Code Pro'), url('https://static.danielcortes.xyz/fonts/SourceCodePro/SourceCodePro-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Source Code Pro';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Source Code Pro'), url('https://static.danielcortes.xyz/fonts/SourceCodePro/SourceCodePro-Bold.ttf') format('truetype');
+}
+
+/******************************************************************************
+    => Source Serif Pro
+*******************************************************************************/
+@font-face {
+  font-family: 'Source Serif Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Source Serif Pro'), url('https://static.danielcortes.xyz/fonts/SourceSerifPro/SourceSerifPro-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Source Serif Pro';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Source Serif Pro'), url('https://static.danielcortes.xyz/fonts/SourceSerifPro/SourceSerifPro-Bold.ttf') format('truetype');
+}
+
+/******************************************************************************
+    => Source Sans Pro
+*******************************************************************************/
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Source Sans Pro'), url('https://static.danielcortes.xyz/fonts/SourceSansPro/SourceSansPro-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Source Sans Pro'), url('https://static.danielcortes.xyz/fonts/SourceSansPro/SourceSansPro-Bold.ttf') format('truetype');
+}
