@@ -13,8 +13,7 @@ publicar snipets de código que generalmente se me olvidan y siempre estoy
 volviendo a ellos, si en algún momento me emociono quizás publico algo 
 totalmente distinto.
 
-Para ver los proyectos que he hecho puedes verlos entre
-[Github](https://github.com/Ryuuji159) y [Source Hut](https://git.sr.ht/~skrd159).
+Para ver los proyectos que he hecho puedes verlos en [Gitlab](https://gitlab.com/Ryuuji159)
 
 Socialmente me muevo entre [Twitter](https://twitter.com/skrd159) y 
 [Reddit](https://www.reddit.com/user/Ryuuji159) aunque estoy intentando dejar 
