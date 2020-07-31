@@ -11,6 +11,7 @@ Por aqui dejare links a cosas random que son interesantes, o me gustan, o simple
 - [An app can be a home-cooked meal](https://www.robinsloan.com/notes/home-cooked-app/)
 - [The Decline of Usability](https://datagubbe.se/decusab/)
 - [The Original Cookie specification from 1997 was GDPR compliant](https://baekdal.com/thoughts/the-original-cookie-specification-from-1997-was-gdpr-compliant/)
+- [Computers as I used to love them](https://tonsky.me/blog/syncthing/)
 
 ## Recursos
 - [Wcode - Usar palabras para transmitir codigos de uso humano](https://wcodes.org/)
