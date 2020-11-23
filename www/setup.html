@@ -16,48 +16,48 @@
 <p>Actualmente el setup que estoy usando a cambiado, ya no puedo utilizar un tiling window manager como <code>herbstluftwm</code>, porque estoy obligado a usar VirtualBox para poder correr Microsoft Teams, que es lo que esta utilizando mi universidad para hacer clases y VirtualBox tiene problemas al entrar a modo fullscreen o seamless.</p>
 <p>Así que bueno, me cambie a <code>cwm</code> el cual es un stacking window manager desarrollado como parte de <code>OpenBSD</code>, usa tan solo un archivo de configuración en el <code>$HOME</code> donde se pueden configurar grupos, los que son equivalente a los típicos workspaces, y cambiar los key bindings para ejecutar programas, mover ventanas en la pantalla y entre grupos, hay solo un par de opciones mas que cambiar en realidad por lo que se siente bastante minimalista comparado con <code>OpenBox</code> por usar XML y tener mil opciones.</p>
 <p>La configuración que estoy usando para <code>cwm</code> es la siguiente:</p>
-<pre class="codehilite"><code class="language-sh">moveamount 10
-gap 25 15 15 15
+<div class="codehilite"><pre><span></span><code>moveamount <span class="m">10</span>
+gap <span class="m">25</span> <span class="m">15</span> <span class="m">15</span> <span class="m">15</span>
 
 ignore polybar
 
 sticky yes
 
-autogroup 1 Firefox
-autogroup 8 Spotify
-autogroup 9 Thunderbird
+autogroup <span class="m">1</span> Firefox
+autogroup <span class="m">8</span> Spotify
+autogroup <span class="m">9</span> Thunderbird
 
 unbind-key all
 unbind-mouse all
 
 bind-key     4S-r   restart
 bind-key     4S-e   quit
-bind-key     4-d    &quot;dmenu_custom -r -e cwm&quot;
+bind-key     <span class="m">4</span>-d    <span class="s2">&quot;dmenu_custom -r -e cwm&quot;</span>
 
 bind-key     4C-h   window-resize-left
 bind-key     4C-j   window-resize-down
 bind-key     4C-k   window-resize-up
 bind-key     4C-l   window-resize-right
 
-bind-key     4-f    window-maximize
+bind-key     <span class="m">4</span>-f    window-maximize
 bind-key     4S-f   window-fullscreen
 
 bind-key     M-Tab  window-cycle-ingroup
 bind-key     4S-q   window-delete
 
-bind-mouse   4-1    window-move
-bind-mouse   4-3    window-resize
-bind-mouse   4-2    window-stick
+bind-mouse   <span class="m">4</span>-1    window-move
+bind-mouse   <span class="m">4</span>-3    window-resize
+bind-mouse   <span class="m">4</span>-2    window-stick
 
-bind-key     4-1    group-only-1
-bind-key     4-2    group-only-2
-bind-key     4-3    group-only-3
-bind-key     4-4    group-only-4
-bind-key     4-5    group-only-5
-bind-key     4-6    group-only-6
-bind-key     4-7    group-only-7
-bind-key     4-8    group-only-8
-bind-key     4-9    group-only-9
+bind-key     <span class="m">4</span>-1    group-only-1
+bind-key     <span class="m">4</span>-2    group-only-2
+bind-key     <span class="m">4</span>-3    group-only-3
+bind-key     <span class="m">4</span>-4    group-only-4
+bind-key     <span class="m">4</span>-5    group-only-5
+bind-key     <span class="m">4</span>-6    group-only-6
+bind-key     <span class="m">4</span>-7    group-only-7
+bind-key     <span class="m">4</span>-8    group-only-8
+bind-key     <span class="m">4</span>-9    group-only-9
 
 bind-key     4S-1   window-movetogroup-1
 bind-key     4S-2   window-movetogroup-2
@@ -69,73 +69,73 @@ bind-key     4S-7   window-movetogroup-7
 bind-key     4S-8   window-movetogroup-8
 bind-key     4S-9   window-movetogroup-9
 
-bind-key     4S-h    &quot;tile l&quot;
-bind-key     4S-j    &quot;tile b&quot;
-bind-key     4S-k    &quot;tile t&quot;
-bind-key     4S-l    &quot;tile r&quot;
+bind-key     4S-h    <span class="s2">&quot;tile l&quot;</span>
+bind-key     4S-j    <span class="s2">&quot;tile b&quot;</span>
+bind-key     4S-k    <span class="s2">&quot;tile t&quot;</span>
+bind-key     4S-l    <span class="s2">&quot;tile r&quot;</span>
 
-bind-key     4-h     &quot;move l&quot;
-bind-key     4-j     &quot;move b&quot;
-bind-key     4-k     &quot;move t&quot;
-bind-key     4-l     &quot;move r&quot;</code></pre>
-
+bind-key     <span class="m">4</span>-h     <span class="s2">&quot;move l&quot;</span>
+bind-key     <span class="m">4</span>-j     <span class="s2">&quot;move b&quot;</span>
+bind-key     <span class="m">4</span>-k     <span class="s2">&quot;move t&quot;</span>
+bind-key     <span class="m">4</span>-l     <span class="s2">&quot;move r&quot;</span>
+</code></pre></div>
 
 <p>Realmente la mayoría de la configuración que tengo es para mover las ventanas alrededor al estilo de un tiling window manager, porque esas costumbres no mueren.</p>
 <p>Lo otro que tengo es <code>polybar</code> con un script bastante pequeño, porque cuando configure esto mi idea era que realmente era un ambiente para usar solo la maquina virtual de Windows, por lo que lo único que necesitaría saber en cada momento era la hora, si mi micrófono esta muteado y la batería disponible.</p>
-<pre class="codehilite"><code>[bar/bar]
-width  = 100%
-height = 15 
-override-redirect=true
+<div class="codehilite"><pre><span></span><code><span class="k">[bar/bar]</span>
+<span class="na">width</span>  <span class="o">=</span> <span class="s">100%</span>
+<span class="na">height</span> <span class="o">=</span> <span class="s">15 </span>
+<span class="na">override-redirect</span><span class="o">=</span><span class="s">true</span>
 
-background = ${xrdb:background:#222}
-foreground = ${xrdb:foreground:#fff}
+<span class="na">background</span> <span class="o">=</span> <span class="s">${xrdb:background:#222}</span>
+<span class="na">foreground</span> <span class="o">=</span> <span class="s">${xrdb:foreground:#fff}</span>
 
-padding = 3
-module-margin = 1
+<span class="na">padding</span> <span class="o">=</span> <span class="s">3</span>
+<span class="na">module-margin</span> <span class="o">=</span> <span class="s">1</span>
 
-font-0 = &quot;monospace:pixelsize=10;0&quot;
+<span class="na">font-0</span> <span class="o">=</span> <span class="s">&quot;monospace:pixelsize=10;0&quot;</span>
 
-separator = |
-wm-name = polybar
+<span class="na">separator</span> <span class="o">=</span> <span class="s">|</span>
+<span class="na">wm-name</span> <span class="o">=</span> <span class="s">polybar</span>
 
-modules-left = window
-modules-right = muted date battery
+<span class="na">modules-left</span> <span class="o">=</span> <span class="s">window</span>
+<span class="na">modules-right</span> <span class="o">=</span> <span class="s">muted date battery</span>
 
-[module/window]
-type = internal/xwindow
+<span class="k">[module/window]</span>
+<span class="na">type</span> <span class="o">=</span> <span class="s">internal/xwindow</span>
 
-[module/battery]
-type    = internal/battery
-battery = BAT0
-adapter = AC
-full-at = 100
+<span class="k">[module/battery]</span>
+<span class="na">type</span>    <span class="o">=</span> <span class="s">internal/battery</span>
+<span class="na">battery</span> <span class="o">=</span> <span class="s">BAT0</span>
+<span class="na">adapter</span> <span class="o">=</span> <span class="s">AC</span>
+<span class="na">full-at</span> <span class="o">=</span> <span class="s">100</span>
 
-[module/date]
-type     = internal/date
-interval = 10
+<span class="k">[module/date]</span>
+<span class="na">type</span>     <span class="o">=</span> <span class="s">internal/date</span>
+<span class="na">interval</span> <span class="o">=</span> <span class="s">10</span>
 
-date  = %d/%m
-time  = %H:%M
-label = %time%
+<span class="na">date</span>  <span class="o">=</span> <span class="s">%d/%m</span>
+<span class="na">time</span>  <span class="o">=</span> <span class="s">%H:%M</span>
+<span class="na">label</span> <span class="o">=</span> <span class="s">%time%</span>
 
-[module/muted]
-type = custom/script
-exec = is_muted
-tail = true</code></pre>
-
+<span class="k">[module/muted]</span>
+<span class="na">type</span> <span class="o">=</span> <span class="s">custom/script</span>
+<span class="na">exec</span> <span class="o">=</span> <span class="s">is_muted</span>
+<span class="na">tail</span> <span class="o">=</span> <span class="s">true</span>
+</code></pre></div>
 
 <p>Para configurar el color y todo eso estoy simplemente usando pywal con la imagen de fondo y la saturacion al 100%</p>
 <p>Lo ultimo que afecta directamente a todo lo que hago, es la configuración de <code>urxvt</code>, la cual igual que todo, bastante cortita, la fuente que sea la <code>monospace</code> global, actualmente es <code>envypn</code>, un borde interno y quitando la scrollbar que realmente no hace falta.</p>
-<pre class="codehilite"><code>URxvt.font: xft:monospace
-URxvt.letterSpace: 0
-URxvt.lineSpace: 1
-URxvt.internalBorder: 30
-URxvt.cursorBlink: true
-URxvt.cursorUnderline: false
-URxvt.scrollBar: false
-URxvt.saveLines: 10000
-URxvt.depth: 32</code></pre>
-
+<div class="codehilite"><pre><span></span><code><span class="err">URxvt.font: xft:monospace</span>
+<span class="err">URxvt.letterSpace: 0</span>
+<span class="err">URxvt.lineSpace: 1</span>
+<span class="err">URxvt.internalBorder: 30</span>
+<span class="err">URxvt.cursorBlink: true</span>
+<span class="err">URxvt.cursorUnderline: false</span>
+<span class="err">URxvt.scrollBar: false</span>
+<span class="err">URxvt.saveLines: 10000</span>
+<span class="err">URxvt.depth: 32</span>
+</code></pre></div>
 
 <p>Y eso es en resumen este setup que ocupo ahorita, hay unos cuantos scripts que uso comúnmente, <code>screenshot</code>, <code>is_mute</code>, <code>move</code>, <code>tile</code> y <code>cpu</code>, ademas de varios programas que uso siempre, <code>dmenu</code>, <code>pass</code>, <code>sxhkd</code> y otros, todo esto esta subido a mi <code>git</code>, al menos lo intento mantener actualizado.</p>
     </div>
@@ -146,7 +146,7 @@ URxvt.depth: 32</code></pre>
         });
       }
 
-      window.addEventListener('DOMContentLoaded', (event) => {
+      window.addEventListener('load', (event) => {
         makeImagesClickeable();
       });
     </script>

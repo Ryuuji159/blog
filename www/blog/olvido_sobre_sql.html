@@ -18,37 +18,37 @@ hacer un left join, siempre olvido su sintaxis, por eso aquí mantendré una lis
 de comandos que uso constantemente.</p>
 <p>Todos los datos son basados en MySQL, que es la base de datos que mas utilizo.</p>
 <h2>1 - Crear tabla</h2>
-<pre class="codehilite"><code class="language-sql">create table usuario
-(
- id          int           primary key auto_increment,
- nombre      varchar(255)  not null,
- password    binary(32)    not null,
- salt        binary(16)    not null,
- trabajador  int           not null,
- foreign key (trabajador)  references trabajador (id),
- inserted_at timestamp,
- modified_at timestamp,
- );</code></pre>
-
+<div class="codehilite"><pre><span></span><code><span class="k">create</span> <span class="k">table</span> <span class="n">usuario</span>
+<span class="p">(</span>
+ <span class="n">id</span>          <span class="nb">int</span>           <span class="k">primary</span> <span class="k">key</span> <span class="n">auto_increment</span><span class="p">,</span>
+ <span class="n">nombre</span>      <span class="nb">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span>  <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
+ <span class="n">password</span>    <span class="nb">binary</span><span class="p">(</span><span class="mi">32</span><span class="p">)</span>    <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
+ <span class="n">salt</span>        <span class="nb">binary</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span>    <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
+ <span class="n">trabajador</span>  <span class="nb">int</span>           <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
+ <span class="k">foreign</span> <span class="k">key</span> <span class="p">(</span><span class="n">trabajador</span><span class="p">)</span>  <span class="k">references</span> <span class="n">trabajador</span> <span class="p">(</span><span class="n">id</span><span class="p">),</span>
+ <span class="n">inserted_at</span> <span class="k">timestamp</span><span class="p">,</span>
+ <span class="n">modified_at</span> <span class="k">timestamp</span><span class="p">,</span>
+ <span class="p">);</span>
+</code></pre></div>
 
 <h2>2 - Como usar on delete y on update</h2>
 <p>Cuando se crean foreign keys se tiene la opción de agregar on delete y on update 
 constraints, siempre olvido exactamente que significa cada modo de estos 
 constraints así que para ilustrarlos usare el siguiente modelo:</p>
-<pre class="codehilite"><code class="language-sql">create table trabajador
-(
- id     int           primary,
- nombre varchar(255)  not null
-);
+<div class="codehilite"><pre><span></span><code><span class="k">create</span> <span class="k">table</span> <span class="n">trabajador</span>
+<span class="p">(</span>
+ <span class="n">id</span>     <span class="nb">int</span>           <span class="k">primary</span><span class="p">,</span>
+ <span class="n">nombre</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span>  <span class="k">not</span> <span class="k">null</span>
+<span class="p">);</span>
 
-create table usuario
-(
- id            int           primary key,
- nombre        varchar(255)  not null,
- trabajador_id int           not null,
- foreign key (trabajador_id) references trabajador on (id)
-);</code></pre>
-
+<span class="k">create</span> <span class="k">table</span> <span class="n">usuario</span>
+<span class="p">(</span>
+ <span class="n">id</span>            <span class="nb">int</span>           <span class="k">primary</span> <span class="k">key</span><span class="p">,</span>
+ <span class="n">nombre</span>        <span class="nb">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span>  <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
+ <span class="n">trabajador_id</span> <span class="nb">int</span>           <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
+ <span class="k">foreign</span> <span class="k">key</span> <span class="p">(</span><span class="n">trabajador_id</span><span class="p">)</span> <span class="k">references</span> <span class="n">trabajador</span> <span class="k">on</span> <span class="p">(</span><span class="n">id</span><span class="p">)</span>
+<span class="p">);</span>
+</code></pre></div>
 
 <h3><code>ON UPDATE</code></h3>
 <ul>
@@ -74,8 +74,9 @@ usuarios que tengan su id asociado.</li>
 tabla  usuarios sera llenadas con nulls.</li>
 </ul>
 <h2>3 - Creación de foreign keys fuera del create table</h2>
-<pre class="codehilite"><code class="language-sql">alter table usuario add constraint fk_usuario_trabajador 
-foreign key (trabajador_id) references trabajador (id);</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="k">alter</span> <span class="k">table</span> <span class="n">usuario</span> <span class="k">add</span> <span class="k">constraint</span> <span class="n">fk_usuario_trabajador</span> 
+<span class="k">foreign</span> <span class="k">key</span> <span class="p">(</span><span class="n">trabajador_id</span><span class="p">)</span> <span class="k">references</span> <span class="n">trabajador</span> <span class="p">(</span><span class="n">id</span><span class="p">);</span>
+</code></pre></div>
     </div>
     <script>
       function makeImagesClickeable() {
@@ -84,7 +85,7 @@ foreign key (trabajador_id) references trabajador (id);</code></pre>
         });
       }
 
-      window.addEventListener('DOMContentLoaded', (event) => {
+      window.addEventListener('load', (event) => {
         makeImagesClickeable();
       });
     </script>

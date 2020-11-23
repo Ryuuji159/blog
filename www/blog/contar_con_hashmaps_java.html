@@ -18,37 +18,37 @@ ocurrencias, o tal vez necesitas contar los largos de una lista de palabras,
 etc (ahora no se me ocurren mas).</p>
 <p>Previo a Java 8, la única forma (que a mi se me ocurra al menos) de hacer esto 
 era así: </p>
-<pre class="codehilite"><code class="language-java">String[] things = {
-    &quot;ball&quot;, &quot;celery&quot;, &quot;hand&quot;, &quot;celery&quot;, 
-    &quot;mind&quot;, &quot;ball&quot;, &quot;fresh&quot;, &quot;hand&quot;, &quot;ball&quot;, 
-    &quot;fresh&quot;, &quot;fresh&quot;
-};
+<div class="codehilite"><pre><span></span><code><span class="n">String</span><span class="o">[]</span> <span class="n">things</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">&quot;ball&quot;</span><span class="p">,</span> <span class="s">&quot;celery&quot;</span><span class="p">,</span> <span class="s">&quot;hand&quot;</span><span class="p">,</span> <span class="s">&quot;celery&quot;</span><span class="p">,</span> 
+    <span class="s">&quot;mind&quot;</span><span class="p">,</span> <span class="s">&quot;ball&quot;</span><span class="p">,</span> <span class="s">&quot;fresh&quot;</span><span class="p">,</span> <span class="s">&quot;hand&quot;</span><span class="p">,</span> <span class="s">&quot;ball&quot;</span><span class="p">,</span> 
+    <span class="s">&quot;fresh&quot;</span><span class="p">,</span> <span class="s">&quot;fresh&quot;</span>
+<span class="p">};</span>
 
-Map&lt;String, Integer&gt; oldWay = new HashMap&lt;&gt;();
+<span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span> <span class="n">Integer</span><span class="o">&gt;</span> <span class="n">oldWay</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;</span><span class="p">();</span>
 
-for (String thing : things) {
-    if (oldWay.containsKey(thing)) {
-        oldWay.put(thing, oldWay.get(thing) + 1);
-    } else {
-        oldWay.put(thing, 1);
-    }
-}
+<span class="k">for</span> <span class="p">(</span><span class="n">String</span> <span class="n">thing</span> <span class="p">:</span> <span class="n">things</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">oldWay</span><span class="p">.</span><span class="na">containsKey</span><span class="p">(</span><span class="n">thing</span><span class="p">))</span> <span class="p">{</span>
+        <span class="n">oldWay</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="n">thing</span><span class="p">,</span> <span class="n">oldWay</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">thing</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="n">oldWay</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="n">thing</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
 
-System.out.println(&quot;ball   =&gt; &quot; + oldWay.get(&quot;ball&quot;));
-System.out.println(&quot;celery =&gt; &quot; + oldWay.get(&quot;celery&quot;));
-System.out.println(&quot;hand   =&gt; &quot; + oldWay.get(&quot;hand&quot;));
-System.out.println(&quot;fresh  =&gt; &quot; + oldWay.get(&quot;fresh&quot;));
-System.out.println(&quot;mind   =&gt; &quot; + oldWay.get(&quot;mind&quot;));</code></pre>
-
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;ball   =&gt; &quot;</span> <span class="o">+</span> <span class="n">oldWay</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">&quot;ball&quot;</span><span class="p">));</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;celery =&gt; &quot;</span> <span class="o">+</span> <span class="n">oldWay</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">&quot;celery&quot;</span><span class="p">));</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;hand   =&gt; &quot;</span> <span class="o">+</span> <span class="n">oldWay</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">&quot;hand&quot;</span><span class="p">));</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;fresh  =&gt; &quot;</span> <span class="o">+</span> <span class="n">oldWay</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">&quot;fresh&quot;</span><span class="p">));</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;mind   =&gt; &quot;</span> <span class="o">+</span> <span class="n">oldWay</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">&quot;mind&quot;</span><span class="p">));</span>
+</code></pre></div>
 
 <p>Lo cual resulta en:</p>
-<pre class="codehilite"><code class="language-md">ball   =&gt; 3
+<div class="codehilite"><pre><span></span><code>ball   =&gt; 3
 celery =&gt; 2
 hand   =&gt; 2
 fresh  =&gt; 3
-mind   =&gt; 1</code></pre>
-
+mind   =&gt; 1
+</code></pre></div>
 
 <p>Este es el código que utilizaba siempre cuando estaba aprendiendo Java, pero 
 es realmente confuso cuando estas empezando, al menos yo tuve muchos problemas 
@@ -60,11 +60,11 @@ la key con el valor por default, en este caso 1.</p>
 actualmente estamos en Java 13 así que no hay escusa, ahora tenemos Lambdas y 
 <code>HashMap</code> recibió nuevas funciones, entre ellas las que se usaran aquí, 
 <code>putIfAbsent()</code> y <code>computeIfPresent()</code>: </p>
-<pre class="codehilite"><code class="language-java">for (String thing : things) {
-    eightWay.putIfAbsent(thing, 0);
-    eightWay.computeIfPresent(thing, (key, value) -&gt;  value + 1);
-}</code></pre>
-
+<div class="codehilite"><pre><span></span><code><span class="k">for</span> <span class="p">(</span><span class="n">String</span> <span class="n">thing</span> <span class="p">:</span> <span class="n">things</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">eightWay</span><span class="p">.</span><span class="na">putIfAbsent</span><span class="p">(</span><span class="n">thing</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="n">eightWay</span><span class="p">.</span><span class="na">computeIfPresent</span><span class="p">(</span><span class="n">thing</span><span class="p">,</span> <span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">-&gt;</span>  <span class="n">value</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
 
 <p><code>pufIfAbsent()</code> agrega una key solamente si no existe previamente y 
 <code>computeIfPresent()</code> calcula el nuevo valor que contendrá la key con el 
@@ -72,10 +72,10 @@ lambda que se entrega en el segundo argumento, como los 2 serán ejecutados si
 es que el elemento no existe en el <code>HashMap</code>, se empieza a contar desde 0.</p>
 <p>Pero tenemos una función que es mas concisa y al menos a mi me agrada mas para 
 solucionar este problema, esta se llama <code>merge()</code>:</p>
-<pre class="codehilite"><code class="language-java">for (String thing : things) {
-    betterWay.merge(thing, 1, (oldValue, newValue) -&gt; oldValue + newValue);
-}</code></pre>
-
+<div class="codehilite"><pre><span></span><code><span class="k">for</span> <span class="p">(</span><span class="n">String</span> <span class="n">thing</span> <span class="p">:</span> <span class="n">things</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">betterWay</span><span class="p">.</span><span class="na">merge</span><span class="p">(</span><span class="n">thing</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="n">oldValue</span><span class="p">,</span> <span class="n">newValue</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">oldValue</span> <span class="o">+</span> <span class="n">newValue</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
 
 <p><code>merge()</code> toma por argumentos, la key que se agregara, el valor que se quiere 
 agregar y un lambda que ejecutar si es ya existía la key, en el se podrá 
@@ -83,10 +83,10 @@ calcular el nuevo valor que en este caso suma el valor antiguo con el valor
 que se quiere agregar.</p>
 <p>Incluso esta forma puede quedar aun mas corta si se utiliza una referencia de 
 método, en ingles: method reference, que suena bastante mejor a mi gusto:</p>
-<pre class="codehilite"><code class="language-java">for (String thing : things) {
-    evenBetterWay.merge(thing, 1, Integer::sum);
-}</code></pre>
-
+<div class="codehilite"><pre><span></span><code><span class="k">for</span> <span class="p">(</span><span class="n">String</span> <span class="n">thing</span> <span class="p">:</span> <span class="n">things</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">evenBetterWay</span><span class="p">.</span><span class="na">merge</span><span class="p">(</span><span class="n">thing</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">Integer</span><span class="p">::</span><span class="n">sum</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
 
 <p>Y esa seria una mejor forma de contar con <code>HashMaps</code>, no es que sea 
 necesariamente mas rápido, de hecho ni siquiera he testeado su velocidad, pero 
@@ -101,7 +101,7 @@ recordar.</p>
         });
       }
 
-      window.addEventListener('DOMContentLoaded', (event) => {
+      window.addEventListener('load', (event) => {
         makeImagesClickeable();
       });
     </script>
