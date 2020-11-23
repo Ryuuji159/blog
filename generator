@@ -4,7 +4,6 @@ import sys
 import time
 import shutil
 from pathlib import Path
-from jinja2 import Template
 from markdown import markdown
 from watchdog.observers import Observer
 from watchdog.events import PatternMatchingEventHandler
@@ -14,7 +13,7 @@ src_dir = Path('src')
 out_dir = Path('www')
 
 with open('template.html') as f:
-    template = Template(f.read());
+    template = f.read();
 
 # Creates the directory tree for the out directory based on the src directory
 def create_dir_tree(path):
@@ -26,7 +25,8 @@ def create_dir_tree(path):
 
 # generates html from a md file and a jinja template
 def generate_html(md):
-    return template.render(md=markdown(text=md, extensions=['codehilite']));
+    html = markdown(text=md, extensions=['codehilite'])
+    return template.replace('{{ md }}', html);
 
 # takes a md file and puts it in a html file using generate_html
 def process_md(path):
