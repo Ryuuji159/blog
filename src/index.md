@@ -1,4 +1,4 @@
-#Daniel Cortes
+#Daniel Cortés
 
 Hola!, soy un estudiante de ingeniería en informática al que le gusta programar,
 jugar videojuegos cuando se puede y escuchar música, mucha, mucha música.
@@ -40,3 +40,4 @@ por lo que no creo que lo mantenga tan actualizado, pero aqui estara :3.
 
 ##[Random](/random.html)
 Links a cosas que me parecen interesantes o utiles.
+
