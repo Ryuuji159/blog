@@ -16,29 +16,15 @@
 }
 
 @font-face {
-    font-family: 'Source Serif Pro';
+    font-family: 'Work Sans';
     font-style: normal;
     font-weight: 400;
-    src: local('Source Serif Pro'), url(https://static.danielcortes.xyz/fonts/SourceSerifPro/SourceSerifPro-Regular.woff2) format('woff2')
+    src: local('Work Sans'), url(https://static.danielcortes.xyz/fonts/WorkSans/WorkSans-Regular.woff2) format('woff2');
 }
 
 @font-face {
-    font-family: 'Source Serif Pro';
+    font-family: 'Work Sans';
     font-style: normal;
     font-weight: 700;
-    src: local('Source Serif Pro'), url(https://static.danielcortes.xyz/fonts/SourceSerifPro/SourceSerifPro-Bold.woff2) format('woff2');
-}
-
-@font-face {
-    font-family: 'Source Sans Pro';
-    font-style: normal;
-    font-weight: 400;
-    src: local('Source Sans Pro'), url(https://static.danielcortes.xyz/fonts/SourceSansPro/SourceSansPro-Regular.woff2) format('woff2');
-}
-
-@font-face {
-    font-family: 'Source Sans Pro';
-    font-style: normal;
-    font-weight: 700;
-    src: local('Source Sans Pro'), url(https://static.danielcortes.xyz/fonts/SourceSansPro/SourceSansPro-Bold.woff2) format('woff2');
+    src: local('Work Sans'), url(https://static.danielcortes.xyz/fonts/WorkSans/WorkSans-Bold.woff2) format('woff2');
 }

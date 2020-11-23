@@ -90,7 +90,7 @@ class WatchHandler(PatternMatchingEventHandler):
 if __name__ == '__main__':
     if len(sys.argv) > 1 and sys.argv[1] == '--watch':
         observer = Observer()
-        observer.schedule(WatchHandler(), str(src_dir))
+        observer.schedule(WatchHandler(), str(src_dir), recursive=True)
         observer.start()
 
         try:

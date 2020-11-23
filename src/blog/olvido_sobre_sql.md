@@ -9,6 +9,8 @@ de comandos que uso constantemente.
 Todos los datos son basados en MySQL, que es la base de datos que mas utilizo.
 
 ## 1 - Crear tabla
+Lo mas basico, pero que siempre falla por una razon o por otra y debo buscar en 
+que parte de la sintaxis falle.
 
     :::sql
     create table usuario
@@ -43,7 +45,7 @@ constraints así que para ilustrarlos usare el siguiente modelo:
      foreign key (trabajador_id) references trabajador on (id)
     );
 
-### `ON UPDATE`
+### ON UPDATE
 - `RESTRICT` (default): Si es que se intenta actualizar el id de la tabla 
 trabajador la operación sera rechazada mientras exista al menos un usuario 
 que referencie a ese trabajador.
@@ -54,7 +56,7 @@ trabajador.
 - `SET NULL`: Al cambiar el id del trabajador, las referencias a este id en
 la tabla usuario se harán nulas.
 
-### `ON DELETE`
+### ON DELETE
 - `RESTRICT` (default): Si es que se intenta eliminar el trabajador la 
 operación sera rechazada mientras exista al menos un usuario que tenga una 
 referencia a ese trabajador.
@@ -65,6 +67,10 @@ usuarios que tengan su id asociado.
 tabla  usuarios sera llenadas con nulls.
 
 ## 3 - Creación de foreign keys fuera del create table
+Siempre que tengo una tabla y la quiero relacionar con una recien creada aparece
+tema, nunca es facil encontrar ejemplos de la sintaxis porque siempre muestran 
+como se hace dentro de un create table.
+
     :::sql
     alter table usuario add constraint fk_usuario_trabajador 
     foreign key (trabajador_id) references trabajador (id);

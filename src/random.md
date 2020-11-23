@@ -1,7 +1,5 @@
 #Random Stuff
 
-Por aqui dejare links a cosas random que son interesantes, o me gustan, o simplemente quiero guardar
-
 ## Preguntas / Respuestas en StackOverflow
 - [SQL select only rows with max value on a column](https://stackoverflow.com/questions/7745609/sql-select-only-rows-with-max-value-on-a-column)
 - [Set of unambiguous looking letters & numbers for user input](https://stackoverflow.com/questions/11919708/set-of-unambiguous-looking-letters-numbers-for-user-input)

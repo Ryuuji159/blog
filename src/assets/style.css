@@ -7,23 +7,22 @@
   --light-color: hsl(10, 10%, 40%);
   --primary-color: hsl(290, 86%, 43%);
   --highlight-color: hsl(200, 90%, 40%);
-  --sans-font: "Source Sans Pro";
+  --sans-font: "Work Sans";
   --mono-font: "Source Code Pro";
 }
 
-html {
-  margin: 2em;
-}
+html { 
+  margin: 2em; 
 
-body {
   background-color: var(--background-color);
 
   font-family: var(--sans-font), "sans-serif";
   font-size: 14pt;
   color: var(--foreground-color);
+}
 
+body {
   overflow-y: scroll;
-
   max-width: 100ch;
   padding: 0 0 20em;
   margin: auto;
@@ -33,22 +32,25 @@ code {
   font-family: "Source Code Pro", "monospace";
 }
 
-h1, h2 { margin: 0 0 .3em 0; }
-
+h1, h2 { margin: 0 0 .3em; }
 h1 { font-size: 3em; }
-
 h2 { font-size: 1.875em; }
 
 time { color: var(--light-color); }
 
 p {
-  margin: 0 0 1em 0;
+  margin: 0 0 1em;
   line-height: 1.5em;
   text-align: justify;
 }
 
+
+li { padding: .3em .5em; }
+
+li a { font-size: 1.2em; }
+
 a, a:visited { 
-  font-weight: 600;
+  font-weight: 400;
   color: var(--primary-color); 
 }
 
@@ -59,10 +61,9 @@ img {
   cursor: pointer;
 }
 
-.container {
-}
-
 .codehilite {
   overflow-x: auto;
   padding: .7em 2em;
+  margin-bottom: 1.5em;
 }
+
