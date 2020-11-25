@@ -7,8 +7,8 @@
   --light-color: hsl(10, 10%, 40%);
   --primary-color: hsl(290, 86%, 43%);
   --highlight-color: hsl(290, 57%, 30%);
-  --sans-font: "Work Sans";
-  --mono-font: "Source Code Pro";
+  --sans-font: "sans-serif";
+  --mono-font: "monospace";
 }
 
 html { 
@@ -16,7 +16,7 @@ html {
 
   background-color: var(--background-color);
 
-  font-family: var(--sans-font), "sans-serif";
+  font-family: var(--sans-font);
   font-size: 14pt;
   color: var(--foreground-color);
 }
@@ -29,7 +29,7 @@ body {
 }
 
 code {
-  font-family: "Source Code Pro", "monospace";
+  font-family: var(--mono-font);
 }
 
 h1, h2 { margin: 0 0 .3em; }
