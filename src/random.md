@@ -3,6 +3,7 @@
 ## Preguntas / Respuestas en StackOverflow
 - [SQL select only rows with max value on a column](https://stackoverflow.com/questions/7745609/sql-select-only-rows-with-max-value-on-a-column)
 - [Set of unambiguous looking letters & numbers for user input](https://stackoverflow.com/questions/11919708/set-of-unambiguous-looking-letters-numbers-for-user-input)
+- [How do you merge two Git repositories](https://stackoverflow.com/questions/1425892/how-do-you-merge-two-git-repositories)
 
 ## Blog posts de otros
 - [Bimodal programming – why design patterns fail](https://blog.cerebralab.com/Bimodal_programming_%E2%80%93_why_design_patterns_fail)
