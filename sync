@@ -1,3 +1,0 @@
-#!/usr/bin/bash
-
-rsync -av www/ zgh:www-dir/www.danielcortes.xyz/

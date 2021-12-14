@@ -18,7 +18,7 @@ El codigo que he escrito para distintos proyectos lo mantengo en
 intento mantener de las redes sociales. Y finalmente, si me quieres enviar un 
 correo, mi dirección es hola@danielcortes.xyz
 
-##[Posts](/blog)
+##[Posts](/blog/index.html)
 Aqui posteo lo que intento escribir una vez al año. Me cuesta conseguir ideas y 
 ganas para sentarme a escribir algo pero me agrada tener la posibilidad aqui.
 
