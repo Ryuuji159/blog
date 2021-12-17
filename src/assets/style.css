@@ -1,6 +1,11 @@
 /******************************************************************************
 => MAIN STYLES 
  *******************************************************************************/
+@font-face {
+  font-family: "Source Code Pro";
+  src: url("https://d3cby5jcb6zmtk.cloudfront.net/fonts/SourceCodePro/SourceCodePro-Regular.otf")
+}
+
 :root {
   --background-color: hsl(10, 20%, 98%);
   --foreground-color: hsl(10, 10%, 13%);
@@ -8,7 +13,7 @@
   --primary-color: hsl(290, 86%, 43%);
   --highlight-color: hsl(290, 57%, 30%);
   --sans-font: "sans-serif";
-  --mono-font: "monospace";
+  --mono-font: "Source Code Pro";
 }
 
 html { 
@@ -29,7 +34,7 @@ body {
 }
 
 code {
-  font-family: var(--mono-font);
+  font-family: var(--mono-font), monospace;
 }
 
 h1, h2 { margin: 0 0 .3em; }
