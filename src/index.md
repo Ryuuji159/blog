@@ -11,9 +11,10 @@ Este blog lo cree principalmente porque quería un proyecto secundario en el que
 trabajar, que no tuviera tanta importancia y lo hiciera de relax, siempre igual
 sirve para practicar html y todas las estupideces que trae consigo.
 
-El codigo que he escrito para distintos proyectos lo mantengo en 
-[Gitlab](https://gitlab.com/Ryuuji159). Socialmente me muevo entre 
-[Twitter](https://twitter.com/skrd159) y 
+El codigo que he escrito para distintos proyectos lo mantengo en
+[Gitlab](https://gitlab.com/Ryuuji159) y ultimamente en 
+[Github](https://github.com/Ryuuji159) principalmente por trabajo.
+Socialmente me muevo entre [Twitter](https://twitter.com/skrd159) y 
 [Reddit](https://www.reddit.com/user/Ryuuji159) aunque no soy tan activo y me 
 intento mantener de las redes sociales. Y finalmente, si me quieres enviar un 
 correo, mi dirección es hola@danielcortes.xyz
