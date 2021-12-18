@@ -23,7 +23,7 @@ que parte de la sintaxis falle.
      foreign key (trabajador)  references trabajador (id),
      inserted_at timestamp,
      modified_at timestamp,
-     );
+    );
 
 ## 2 - Como usar on delete y on update 
 Cuando se crean foreign keys se tiene la opción de agregar on delete y on update 
